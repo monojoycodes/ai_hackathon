@@ -1,0 +1,64 @@
+{
+  "catalog_info": {
+    "title": "Livestock Census - Hingoli District",
+    "description": "This dataset provides detailed livestock population data for Hingoli district, Maharashtra. It is intended for analytical purposes, supporting informed decision-making in animal husbandry and related agricultural planning.",
+    "sector": "Livestock",
+    "keywords": [
+      "livestock",
+      "census",
+      "animal population",
+      "Hingoli",
+      "Maharashtra",
+      "agriculture"
+    ]
+  },
+  "provenance": {
+    "source": "Ministry of Fisheries, Animal Husbandry & Dairying",
+    "jurisdiction": "Hingoli District, Maharashtra",
+    "data_owner": "Local/State Government of Maharashtra"
+  },
+  "spatial_temporal": {
+    "temporal_range": "2024-01-01 to 2024-12-31",
+    "spatial_coverage": "Hingoli District, Maharashtra",
+    "granularity": "District"
+  },
+  "technical_metadata": {
+    "format": "CSV",
+    "schema_details": [
+      {
+        "column": "Year",
+        "type": "Integer"
+      },
+      {
+        "column": "Category wise",
+        "type": "String"
+      },
+      {
+        "column": "Hingoli",
+        "type": "Integer"
+      },
+      {
+        "column": "Kalmnuri",
+        "type": "Integer"
+      },
+      {
+        "column": "Basmat",
+        "type": "Integer"
+      },
+      {
+        "column": "Audha",
+        "type": "Integer"
+      },
+      {
+        "column": "Sengaon",
+        "type": "Integer"
+      },
+      {
+        "column": "District-Hingoli",
+        "type": "Integer"
+      }
+    ],
+    "ai_readiness_level": "0.7",
+    "machine_readable": true
+  }
+}
