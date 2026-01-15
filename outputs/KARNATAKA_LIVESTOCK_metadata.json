@@ -1,0 +1,32 @@
+{
+  "catalog_info": {
+    "title": "Karnataka Livestock Population Data",
+    "description": "This dataset provides detailed livestock population figures for various districts in Karnataka. It is valuable for AI modeling related to agricultural planning, resource allocation, and predicting livestock market trends.",
+    "sector": "Livestock",
+    "keywords": [
+      "livestock",
+      "population",
+      "cattle",
+      "buffalo",
+      "goat",
+      "sheep",
+      "Karnataka",
+      "agriculture"
+    ]
+  },
+  "provenance": {
+    "ministry": "Ministry of Fisheries, Animal Husbandry & Dairying",
+    "department": "Department of Animal Husbandry and Veterinary Services",
+    "jurisdiction": "Karnataka State, various districts",
+    "granularity": "District"
+  },
+  "spatial_temporal": {
+    "temporal_coverage": "2021-01-01 to 2023-12-31",
+    "spatial_coverage": "Karnataka State, India"
+  },
+  "technical_metadata": {
+    "ai_readiness_level": "0.9",
+    "is_machine_readable": true,
+    "standard_conformity": "NDSAP/IDMO"
+  }
+}

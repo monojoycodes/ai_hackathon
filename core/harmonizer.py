@@ -3,7 +3,7 @@ import json
 import glob
 from dotenv import load_dotenv
 from google import genai
-from ingester import extract_file_info  # Import your working ingester logic
+from core.ingester import extract_file_info  # Import your working ingester logic
 
 # --- 1. SETUP & CONFIG ---
 load_dotenv()
@@ -33,7 +33,7 @@ OUTPUT JSON STRUCTURE REQUIRED:
         "title": "Formal name (e.g., 'Livestock Census - Hingoli District')",
         "description": "Professional 2-sentence summary including the purpose of data.",
         "sector": "Choose from [Agriculture, Livestock, Health, Education, Finance, Energy]",
-        "keywords": ["tag1", "tag2", "tag3"]
+        "keywords": ["tag1", "tag2", "tag3"] //atleast four
     }},
     "provenance": {{
         "source": "Inferred Ministry/Department (e.g., Ministry of Fisheries, Animal Husbandry & Dairying)",

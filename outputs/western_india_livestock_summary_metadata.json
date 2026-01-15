@@ -1,0 +1,33 @@
+{
+  "catalog_info": {
+    "title": "Livestock Summary - Western India",
+    "description": "This dataset provides a summary of livestock populations (bovine cattle, buffalo, goats, and sheep) across various locations in Western India. It is valuable for AI modeling related to agricultural planning, resource allocation, and livestock disease prediction, enabling proactive interventions and improved animal husbandry practices.",
+    "sector": "Livestock",
+    "keywords": [
+      "livestock",
+      "cattle",
+      "buffalo",
+      "goat",
+      "sheep",
+      "population",
+      "agriculture",
+      "western india",
+      "animal husbandry"
+    ]
+  },
+  "provenance": {
+    "ministry": "Ministry of Fisheries, Animal Husbandry & Dairying",
+    "department": "Department of Animal Husbandry and Dairying",
+    "jurisdiction": "Gujarat, Rajasthan",
+    "granularity": "District"
+  },
+  "spatial_temporal": {
+    "temporal_coverage": "2021-01-01 to 2023-12-31",
+    "spatial_coverage": "Districts of Gujarat and Rajasthan, India"
+  },
+  "technical_metadata": {
+    "ai_readiness_level": "0.9",
+    "is_machine_readable": true,
+    "standard_conformity": "NDSAP/IDMO"
+  }
+}

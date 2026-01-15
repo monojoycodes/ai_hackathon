@@ -1,0 +1,30 @@
+{
+  "catalog_info": {
+    "title": "Livestock Census - Madhya Pradesh",
+    "description": "This dataset provides a comprehensive count of livestock across districts in Madhya Pradesh. It is valuable for AI modeling related to agricultural planning, resource allocation, and predicting livestock-related economic trends.",
+    "sector": "Livestock",
+    "keywords": [
+      "livestock",
+      "census",
+      "Madhya Pradesh",
+      "agriculture",
+      "animal husbandry",
+      "population"
+    ]
+  },
+  "provenance": {
+    "ministry": "Ministry of Fisheries, Animal Husbandry & Dairying",
+    "department": "Department of Animal Husbandry and Dairying",
+    "jurisdiction": "Madhya Pradesh",
+    "granularity": "District"
+  },
+  "spatial_temporal": {
+    "temporal_coverage": "2021-01-01 to 2022-12-31",
+    "spatial_coverage": "Districts of Madhya Pradesh"
+  },
+  "technical_metadata": {
+    "ai_readiness_level": "0.9",
+    "is_machine_readable": true,
+    "standard_conformity": "NDSAP/IDMO"
+  }
+}
