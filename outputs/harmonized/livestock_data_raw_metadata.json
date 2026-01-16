@@ -1,0 +1,79 @@
+{
+  "catalog_info": {
+    "title": "District-wise Livestock Census - Uttar Pradesh (2023)",
+    "description": "This dataset provides the count of cattle, buffalo, goat, and sheep at the district level for Uttar Pradesh in 2023. It is valuable for AI/ML applications focused on livestock management, resource allocation, and predicting agricultural trends. The data can also support policy decisions related to animal husbandry and rural development.",
+    "sector": "Livestock",
+    "keywords": [
+      "livestock",
+      "census",
+      "cattle",
+      "buffalo",
+      "goat",
+      "sheep",
+      "agriculture",
+      "Uttar Pradesh",
+      "animal husbandry"
+    ],
+    "language": "English",
+    "update_frequency": "Annual"
+  },
+  "provenance": {
+    "source": "Ministry of Fisheries, Animal Husbandry & Dairying",
+    "publisher": "Department of Animal Husbandry, Government of Uttar Pradesh",
+    "jurisdiction": "Uttar Pradesh",
+    "data_owner": "Government of India",
+    "contact": "Not available"
+  },
+  "spatial_temporal": {
+    "temporal_coverage": "2023",
+    "spatial_coverage": "Uttar Pradesh State",
+    "granularity": "District"
+  },
+  "usage": {
+    "license": "Open Government Data License - India",
+    "access_constraints": "None - Public Data",
+    "use_cases": [
+      "AI/ML training",
+      "Policy analysis",
+      "Research",
+      "Livestock population estimation",
+      "Resource planning"
+    ],
+    "target_audience": [
+      "Researchers",
+      "Data Scientists",
+      "Policy Makers",
+      "Agricultural Organizations",
+      "Startups"
+    ]
+  },
+  "technical_metadata": {
+    "format": "CSV",
+    "original_filename": "livestock_data_raw.csv",
+    "row_count": 5,
+    "column_count": 7,
+    "columns": [
+      "district",
+      "state",
+      "cattle_count",
+      "buffalo_count",
+      "goat_count",
+      "sheep_count",
+      "year"
+    ],
+    "data_quality": {
+      "completeness": 0.89,
+      "standardized": true,
+      "ai_ready": true
+    },
+    "transformations_applied": {
+      "Dist": "district",
+      "St": "state",
+      "Cattle": "cattle_count",
+      "Buffalo": "buffalo_count",
+      "Goat": "goat_count",
+      "Sheep": "sheep_count",
+      "Yr": "year"
+    }
+  }
+}

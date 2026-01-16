@@ -1,4 +1,4 @@
-district_name,state_name,cattle_count,buffalo_count,goat_count,sheep_count,year
+district,state,cattle_count,buffalo_count,goat_count,sheep_count,year
 Jaipur,Rajasthan,82175,35821,22666,41333,2021
 Kota,Rajasthan,63110,56962,10905,28081,2022
 Bhilwara,Rajasthan,109161,74278,94190,5663,2021

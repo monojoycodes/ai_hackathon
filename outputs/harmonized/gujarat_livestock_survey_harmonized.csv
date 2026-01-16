@@ -1,4 +1,4 @@
-district_name,state_name,cattle_count,buffalo_count,goat_count,sheep_count,survey_year
+district,state,cattle_count,buffalo_count,goat_count,sheep_count,year
 Bhavnagar,Gujarat,126776,47018,91201,42870,2021
 Vadodara,Gujarat,121951,5965,44811,41075,2023
 Surat,Gujarat,48716,14300,37797,9136,2023

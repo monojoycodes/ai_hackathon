@@ -1,4 +1,4 @@
-location,region,bovine_cattle_count,bovine_buffalo_count,small_ruminants_goat_count,small_ruminants_sheep_count,data_year
+district,state,cattle_count,buffalo_count,goat_count,sheep_count,year
 Rajkot,Gujarat,117365,26512,16024,44549,2023
 Surat,Gujarat,62713,8688,28934,37549,2023
 Ahmedabad,Gujarat,47075,67943,97368,27561,2022

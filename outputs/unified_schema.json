@@ -1,0 +1,117 @@
+{
+  "domain": "agriculture_livestock",
+  "column_mappings": {
+    "district": [
+      "district",
+      "dist",
+      "District",
+      "DISTRICT",
+      "District_Name",
+      "districtName",
+      "District Name",
+      "zillakanaam",
+      "Dist",
+      "Dist_Code",
+      "Location",
+      "jilla"
+    ],
+    "state": [
+      "state",
+      "State",
+      "STATE",
+      "State_Name",
+      "stateName",
+      "State Name",
+      "rajyanaam",
+      "St",
+      "Region"
+    ],
+    "cattle_count": [
+      "cattle",
+      "Cattle",
+      "CATTLE",
+      "Cattle_Count",
+      "cattleCount",
+      "gau_sankhya",
+      "Total_Cattle",
+      "TOTAL_CATTLE",
+      "No of Cattle",
+      "Bovine_Cattle",
+      "Cat_Pop"
+    ],
+    "buffalo_count": [
+      "buffalo",
+      "Buffalo",
+      "BUFFALO",
+      "Buffalo_Count",
+      "buffaloCount",
+      "buffaloes",
+      "bhains_sankhya",
+      "BUFALLO_POPULATION",
+      "No of Buffalo",
+      "Bovine_Buffalo",
+      "Buf_Pop"
+    ],
+    "goat_count": [
+      "goat",
+      "Goat",
+      "GOAT",
+      "Goat_Count",
+      "goatCount",
+      "goats",
+      "bakri_sankhya",
+      "GOAT_NOS",
+      "Goat Population",
+      "Small_Ruminants_Goat",
+      "Gt_Pop"
+    ],
+    "sheep_count": [
+      "sheep",
+      "Sheep",
+      "SHEEP",
+      "Sheep_Count",
+      "sheepCount",
+      "bhed_sankhya",
+      "SHEEP_NOS",
+      "Sheep Population",
+      "Small_Ruminants_Sheep",
+      "Shp_Pop"
+    ],
+    "year": [
+      "year",
+      "Year",
+      "YEAR",
+      "yr",
+      "Yr",
+      "census_year",
+      "surveyYear",
+      "Census_Year",
+      "varsh",
+      "Data_Year"
+    ],
+    "survey_officer": [
+      "Survey_Officer",
+      "survey_officer",
+      "officer"
+    ]
+  },
+  "column_types": {
+    "district": "string",
+    "state": "string",
+    "cattle_count": "integer",
+    "buffalo_count": "integer",
+    "goat_count": "integer",
+    "sheep_count": "integer",
+    "year": "integer",
+    "survey_officer": "string"
+  },
+  "required_columns": [
+    "district",
+    "year"
+  ],
+  "data_standards": {
+    "jurisdiction_level": "District",
+    "sector": "Livestock",
+    "ministry": "Ministry of Fisheries, Animal Husbandry & Dairying"
+  }
+}

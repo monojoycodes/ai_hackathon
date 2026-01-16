@@ -1,0 +1,79 @@
+{
+  "catalog_info": {
+    "title": "District-wise Livestock Census - Tamil Nadu (2021)",
+    "description": "This dataset provides the count of different livestock animals (cattle, buffalo, goat, and sheep) at the district level in Tamil Nadu for the year 2021. It can be used for AI/ML applications related to livestock management, resource allocation, and predictive analysis of animal populations. The data supports applications in precision agriculture and animal health monitoring.",
+    "sector": "Livestock",
+    "keywords": [
+      "livestock",
+      "census",
+      "animal count",
+      "Tamil Nadu",
+      "agriculture",
+      "cattle",
+      "buffalo",
+      "goat",
+      "sheep"
+    ],
+    "language": "English",
+    "update_frequency": "Annual"
+  },
+  "provenance": {
+    "source": "Department of Animal Husbandry and Dairying, Tamil Nadu",
+    "publisher": "Directorate of Economics and Statistics, Tamil Nadu",
+    "jurisdiction": "Tamil Nadu",
+    "data_owner": "Government of Tamil Nadu",
+    "contact": "Not available"
+  },
+  "spatial_temporal": {
+    "temporal_coverage": "2021",
+    "spatial_coverage": "Tamil Nadu State",
+    "granularity": "District"
+  },
+  "usage": {
+    "license": "Open Government Data License - India",
+    "access_constraints": "None - Public Data",
+    "use_cases": [
+      "AI/ML training",
+      "Livestock population estimation",
+      "Resource planning",
+      "Policy analysis",
+      "Research"
+    ],
+    "target_audience": [
+      "Researchers",
+      "Data Scientists",
+      "Policy Makers",
+      "Agriculture Professionals",
+      "Startups"
+    ]
+  },
+  "technical_metadata": {
+    "format": "CSV",
+    "original_filename": "TamilNadu_AnimalCensus.csv",
+    "row_count": 6,
+    "column_count": 7,
+    "columns": [
+      "district",
+      "state",
+      "cattle_count",
+      "buffalo_count",
+      "goat_count",
+      "sheep_count",
+      "year"
+    ],
+    "data_quality": {
+      "completeness": 1.0,
+      "standardized": true,
+      "ai_ready": true
+    },
+    "transformations_applied": {
+      "District Name": "district",
+      "State Name": "state",
+      "No of Cattle": "cattle_count",
+      "No of Buffalo": "buffalo_count",
+      "Goat Population": "goat_count",
+      "Sheep Population": "sheep_count",
+      "Year": "year"
+    }
+  }
+}

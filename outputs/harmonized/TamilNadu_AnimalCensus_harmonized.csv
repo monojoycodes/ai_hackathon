@@ -1,4 +1,4 @@
-district_name,state_name,cattle_population,buffalo_population,goat_population,sheep_population,year
+district,state,cattle_count,buffalo_count,goat_count,sheep_count,year
 Tirunelveli,Tamil Nadu,72212,6912,86614,36042,2021
 Salem,Tamil Nadu,24534,51856,62789,20231,2021
 Coimbatore,Tamil Nadu,46578,27169,14844,22649,2021
