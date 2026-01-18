@@ -11,8 +11,15 @@ class Ingester:
         try:
             if ext == '.csv':
                 df = pd.read_csv(file_path, encoding='utf-8', on_bad_lines='skip')
+            elif ext == '.tsv':
+                df = pd.read_csv(file_path, sep='\t', encoding='utf-8', on_bad_lines='skip')
             elif ext in ['.xlsx', '.xls']:
                 df = pd.read_excel(file_path)
+            elif ext in ['.json', '.jsonl']:
+                try:
+                    df = pd.read_json(file_path, lines=True)
+                except ValueError:
+                    df = pd.read_json(file_path)
             else:
                 print(f"❌ Unsupported format: {ext}")
                 return None
@@ -25,9 +32,11 @@ class Ingester:
     
     def get_file_info(self, file_path, df):
         """Extract file metadata for analysis"""
+        ext = os.path.splitext(file_path)[1].lower()
         return {
             'filename': os.path.basename(file_path),
             'filepath': file_path,
+            'format': ext.lstrip('.').upper() if ext else 'UNKNOWN',
             'columns': df.columns.tolist(),
             'row_count': len(df),
             'sample_data': df.head(3).to_string()

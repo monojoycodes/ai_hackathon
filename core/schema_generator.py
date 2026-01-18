@@ -2,8 +2,10 @@ import os
 import json
 from google import genai
 from dotenv import load_dotenv
+from core.logging_utils import get_logger
 
 load_dotenv()
+logger = get_logger(__name__)
 
 class UnifiedSchemaGenerator:
     """
@@ -79,7 +81,7 @@ class UnifiedSchemaGenerator:
                 return self._create_fallback_schema(all_columns_list, files_summary)
             
         except Exception as e:
-            print(f"❌ Schema generation failed: {e}")
+            logger.exception("Schema generation failed: %s", e)
             print("   Creating fallback schema...")
             return self._create_fallback_schema(all_columns_list, files_summary)
     
@@ -239,7 +241,7 @@ Return the JSON now:"""
             return schema
             
         except Exception as e:
-            print(f"⚠️  Failed to parse schema: {e}")
+            logger.warning("Failed to parse schema: %s", e)
             print(f"Raw response (first 500 chars): {response_text[:500]}")
             return None
     
