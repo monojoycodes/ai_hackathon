@@ -178,13 +178,7 @@ RULES:
             if pd.api.types.is_numeric_dtype(series):
                 years = pd.to_numeric(series, errors='coerce').dropna()
                 if not years.empty:
-                    def is_integer_year(value):
-                        try:
-                            return float(value).is_integer()
-                        except (TypeError, ValueError):
-                            return False
-
-                    if years.apply(is_integer_year).all():
+                    if years.apply(self._is_integer_year).all():
                         min_year = int(years.min())
                         max_year = int(years.max())
                         return str(min_year) if min_year == max_year else f"{min_year}-{max_year}"
@@ -198,6 +192,12 @@ RULES:
                 max_date = parsed.max().date().isoformat()
                 return min_date if min_date == max_date else f"{min_date} to {max_date}"
         return None
+
+    def _is_integer_year(self, value):
+        try:
+            return float(value).is_integer()
+        except (TypeError, ValueError):
+            return False
 
     def _extract_spatial_coverage(self, df):
         spatial = {}
