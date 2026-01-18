@@ -38,10 +38,7 @@ class MetadataGenerator:
                 contents=prompt
             )
             
-            metadata = self._parse_response(response.text)
-            if metadata is None:
-                logger.warning("Metadata response parsing returned empty JSON for %s", file_info['filename'])
-                metadata = {}
+            metadata = self._parse_response(response.text) or {}
             
             temporal_coverage = self._extract_temporal_coverage(harmonized_df)
             spatial_summary = self._extract_spatial_coverage(harmonized_df)
@@ -150,7 +147,7 @@ RULES:
             return json.loads(cleaned.strip())
         except Exception as e:
             logger.warning("Failed to parse metadata JSON: %s", e)
-            return None
+            return {}
 
     def _calculate_completeness(self, df):
         if df.empty or len(df.columns) == 0:
@@ -179,8 +176,12 @@ RULES:
             if pd.api.types.is_numeric_dtype(series):
                 years = pd.to_numeric(series, errors='coerce').dropna()
                 if not years.empty:
-                    min_year = int(years.min())
-                    max_year = int(years.max())
+                    if years.apply(lambda v: float(v).is_integer()).all():
+                        min_year = int(years.min())
+                        max_year = int(years.max())
+                        return str(min_year) if min_year == max_year else f"{min_year}-{max_year}"
+                    min_year = round(float(years.min()), 2)
+                    max_year = round(float(years.max()), 2)
                     return str(min_year) if min_year == max_year else f"{min_year}-{max_year}"
             parsed = pd.to_datetime(series, errors='coerce')
             parsed = parsed.dropna()
@@ -216,9 +217,13 @@ RULES:
             lat_clean = lat.dropna()
             lon_clean = lon.dropna()
             if not lat_clean.empty and not lon_clean.empty:
+                lat_min = float(round(lat_clean.min(), 6))
+                lat_max = float(round(lat_clean.max(), 6))
+                lon_min = float(round(lon_clean.min(), 6))
+                lon_max = float(round(lon_clean.max(), 6))
                 spatial['geotags'] = {
-                    'latitude_range': [float(round(lat_clean.min(), 6)), float(round(lat_clean.max(), 6))],
-                    'longitude_range': [float(round(lon_clean.min(), 6)), float(round(lon_clean.max(), 6))]
+                    'latitude_range': [lat_min, lat_max],
+                    'longitude_range': [lon_min, lon_max]
                 }
 
         return spatial

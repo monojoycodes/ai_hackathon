@@ -15,11 +15,10 @@ class Ingester:
                 df = pd.read_csv(file_path, sep='\t', encoding='utf-8', on_bad_lines='skip')
             elif ext in ['.xlsx', '.xls']:
                 df = pd.read_excel(file_path)
-            elif ext in ['.json', '.jsonl']:
-                try:
-                    df = pd.read_json(file_path, lines=True)
-                except ValueError:
-                    df = pd.read_json(file_path)
+            elif ext == '.json':
+                df = pd.read_json(file_path)
+            elif ext == '.jsonl':
+                df = pd.read_json(file_path, lines=True)
             else:
                 print(f"❌ Unsupported format: {ext}")
                 return None
