@@ -12,6 +12,8 @@ class MetadataGenerator:
     """
     Generates AIKosh/IDMO-compliant metadata for harmonized datasets.
     """
+    MAX_LOCATION_PREVIEW = 5
+    NULL_PLACEHOLDERS = {'nan', 'none', 'null'}
     
     def __init__(self, unified_schema):
         self.client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
@@ -195,8 +197,8 @@ RULES:
 
     def _is_integer_year(self, value):
         try:
-            return float(value).is_integer()
-        except (TypeError, ValueError):
+            return int(value) == float(value)
+        except (TypeError, ValueError, OverflowError):
             return False
 
     def _extract_spatial_coverage(self, df):
@@ -212,8 +214,8 @@ RULES:
         normalized_locations = self._normalize_geo_values(location_values)
         if normalized_locations:
             spatial['spatial_coverage'] = (
-                ", ".join(normalized_locations[:5])
-                if len(normalized_locations) <= 5
+                ", ".join(normalized_locations[:self.MAX_LOCATION_PREVIEW])
+                if len(normalized_locations) <= self.MAX_LOCATION_PREVIEW
                 else "Multiple locations"
             )
 
@@ -247,7 +249,7 @@ RULES:
         normalized = set()
         for value in values:
             text = str(value).strip()
-            if not text or text.lower() in {'nan', 'none', 'null'}:
+            if not text or text.lower() in self.NULL_PLACEHOLDERS:
                 continue
             normalized.add(text.title())
         return sorted(normalized)
