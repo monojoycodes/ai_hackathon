@@ -197,16 +197,25 @@ RULES:
 
     def _is_integer_year(self, value):
         try:
-            return int(value) == float(value)
+            if isinstance(value, bool):
+                return False
+            if isinstance(value, int):
+                return True
+            if isinstance(value, float):
+                return value.is_integer()
+            if hasattr(value, 'is_integer'):
+                return value.is_integer()
+            return float(value).is_integer()
         except (TypeError, ValueError, OverflowError):
             return False
 
     def _extract_spatial_coverage(self, df):
         spatial = {}
         location_values = []
+        lower_columns = {col: col.lower() for col in df.columns}
         location_cols = [
-            col for col in df.columns
-            if any(token in col.lower() for token in ['state', 'district', 'region'])
+            col for col, lower_col in lower_columns.items()
+            if any(token in lower_col for token in ['state', 'district', 'region'])
         ]
         for col in location_cols:
             location_values.extend(df[col].dropna().astype(str).tolist())

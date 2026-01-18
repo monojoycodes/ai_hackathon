@@ -5,7 +5,7 @@ class Ingester:
     """Loads CSV, Excel, TSV, JSON, and JSONL files into memory"""
     
     def load_file(self, file_path):
-        """Reads CSV or Excel files completely into memory."""
+        """Reads CSV, Excel, TSV, JSON, or JSONL files into memory."""
         ext = os.path.splitext(file_path)[1].lower()
         
         try:
