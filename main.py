@@ -19,11 +19,15 @@ def run_two_phase_harmonization():
     OUTPUT_DIR = "outputs/harmonized"
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     
-    files = glob.glob(f"{INPUT_DIR}/*.csv")
+    extensions = (".csv", ".xlsx", ".xls", ".json", ".jsonl", ".tsv")
+    files = []
+    for ext in extensions:
+        files.extend(glob.glob(f"{INPUT_DIR}/*{ext}"))
+    files = sorted(set(files))
     
     if not files:
-        print(f"❌ No CSV files found in '{INPUT_DIR}' folder")
-        print("Please add CSV files and run again")
+        print(f"❌ No supported data files found in '{INPUT_DIR}' folder")
+        print("Please add CSV, Excel, JSON, or TSV files and run again")
         return
     
     print("\n" + "="*70)
