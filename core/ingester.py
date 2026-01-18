@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 class Ingester:
-    """Loads CSV/Excel files into memory"""
+    """Loads CSV, Excel, TSV, JSON, and JSONL files into memory"""
     
     def load_file(self, file_path):
         """Reads CSV or Excel files completely into memory."""

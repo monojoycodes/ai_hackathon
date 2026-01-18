@@ -39,7 +39,7 @@ class MetadataGenerator:
             )
             
             metadata = self._parse_response(response.text)
-            if not metadata:
+            if metadata is None:
                 logger.warning("Metadata response parsing returned empty JSON for %s", file_info['filename'])
                 metadata = {}
             
@@ -150,7 +150,7 @@ RULES:
             return json.loads(cleaned.strip())
         except Exception as e:
             logger.warning("Failed to parse metadata JSON: %s", e)
-            return {}
+            return None
 
     def _calculate_completeness(self, df):
         if df.empty or len(df.columns) == 0:
@@ -213,10 +213,12 @@ RULES:
         if lat_col and lon_col:
             lat = pd.to_numeric(df[lat_col], errors='coerce')
             lon = pd.to_numeric(df[lon_col], errors='coerce')
-            if lat.notna().any() and lon.notna().any():
+            lat_clean = lat.dropna()
+            lon_clean = lon.dropna()
+            if not lat_clean.empty and not lon_clean.empty:
                 spatial['geotags'] = {
-                    'latitude_range': [float(round(lat.min(), 6)), float(round(lat.max(), 6))],
-                    'longitude_range': [float(round(lon.min(), 6)), float(round(lon.max(), 6))]
+                    'latitude_range': [float(round(lat_clean.min(), 6)), float(round(lat_clean.max(), 6))],
+                    'longitude_range': [float(round(lon_clean.min(), 6)), float(round(lon_clean.max(), 6))]
                 }
 
         return spatial
