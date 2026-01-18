@@ -161,6 +161,8 @@ RULES:
         if df.empty:
             return 0.0
         mapped = transformation_log.get('mapping', {})
+        if len(df.columns) == 0 or not mapped:
+            return 0.0
         coverage = len(mapped) / max(len(df.columns), 1)
         return round(min(coverage, 1.0), 2)
 
@@ -176,7 +178,13 @@ RULES:
             if pd.api.types.is_numeric_dtype(series):
                 years = pd.to_numeric(series, errors='coerce').dropna()
                 if not years.empty:
-                    if years.apply(lambda v: float(v).is_integer()).all():
+                    def is_integer_year(value):
+                        try:
+                            return float(value).is_integer()
+                        except (TypeError, ValueError):
+                            return False
+
+                    if years.apply(is_integer_year).all():
                         min_year = int(years.min())
                         max_year = int(years.max())
                         return str(min_year) if min_year == max_year else f"{min_year}-{max_year}"
