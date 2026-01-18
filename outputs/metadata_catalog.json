@@ -1,191 +1,32 @@
 [
   {
     "catalog_info": {
-      "title": "District-wise Livestock Census - Gujarat",
-      "description": "This dataset provides the count of major livestock species (cattle, buffalo, goat, and sheep) at the district level in Gujarat. It is valuable for AI/ML applications focused on livestock management, resource allocation, and predicting agricultural trends. The data supports analysis of livestock distribution and population dynamics.",
-      "sector": "Livestock",
+      "title": "District-wise Education Report - Zone 1",
+      "description": "This dataset contains information on student counts and pass rates for educational institutions across districts in Zone 1. It can be used for AI/ML applications such as predicting student performance, optimizing resource allocation, and identifying areas needing educational intervention. The data supports analysis of educational outcomes at a granular level.",
+      "sector": "Health and Education",
       "keywords": [
-        "livestock",
-        "census",
-        "Gujarat",
-        "cattle",
-        "buffalo",
-        "goat",
-        "sheep",
-        "agriculture",
-        "animal husbandry"
+        "education",
+        "student performance",
+        "pass rate",
+        "district level",
+        "school data",
+        "educational outcomes",
+        "zone 1",
+        "institution"
       ],
       "language": "English",
       "update_frequency": "Annual"
     },
     "provenance": {
-      "source": "Department of Animal Husbandry, Government of Gujarat (Inferred)",
-      "publisher": "Directorate of Animal Husbandry, Gujarat (Inferred)",
-      "jurisdiction": "Gujarat State",
-      "data_owner": "Government of Gujarat",
-      "contact": "Not available"
-    },
-    "spatial_temporal": {
-      "temporal_coverage": "2021-2023",
-      "spatial_coverage": "Gujarat State",
-      "granularity": "District"
-    },
-    "usage": {
-      "license": "Open Government Data License - India",
-      "access_constraints": "None - Public Data",
-      "use_cases": [
-        "AI/ML training",
-        "Livestock population estimation",
-        "Policy analysis",
-        "Resource allocation",
-        "Research"
-      ],
-      "target_audience": [
-        "Researchers",
-        "Data Scientists",
-        "Policy Makers",
-        "Agricultural Experts",
-        "Startups"
-      ]
-    },
-    "technical_metadata": {
-      "format": "CSV",
-      "original_filename": "gujarat_livestock_survey.csv",
-      "row_count": 5,
-      "column_count": 7,
-      "columns": [
-        "district",
-        "state",
-        "cattle_count",
-        "buffalo_count",
-        "goat_count",
-        "sheep_count",
-        "year"
-      ],
-      "data_quality": {
-        "completeness": 1.0,
-        "standardized": true,
-        "ai_ready": true
-      },
-      "transformations_applied": {
-        "districtName": "district",
-        "stateName": "state",
-        "cattleCount": "cattle_count",
-        "buffaloCount": "buffalo_count",
-        "goatCount": "goat_count",
-        "sheepCount": "sheep_count",
-        "surveyYear": "year"
-      }
-    }
-  },
-  {
-    "catalog_info": {
-      "title": "District-wise Livestock Census - Karnataka (2021-2022)",
-      "description": "This dataset provides the count of cattle, buffalo, goat, and sheep across different districts of Karnataka state. It is valuable for AI/ML applications focused on livestock management, resource allocation, and predicting agricultural trends. The data supports analysis of livestock distribution and population dynamics.",
-      "sector": "Livestock",
-      "keywords": [
-        "livestock",
-        "census",
-        "cattle",
-        "buffalo",
-        "goat",
-        "sheep",
-        "Karnataka",
-        "agriculture",
-        "animal husbandry"
-      ],
-      "language": "English",
-      "update_frequency": "Annual"
-    },
-    "provenance": {
-      "source": "Ministry of Fisheries, Animal Husbandry & Dairying",
-      "publisher": "Department of Animal Husbandry and Fisheries, Government of Karnataka",
-      "jurisdiction": "Karnataka State",
-      "data_owner": "Government of Karnataka",
-      "contact": "Not available"
-    },
-    "spatial_temporal": {
-      "temporal_coverage": "2021-2022",
-      "spatial_coverage": "Karnataka State",
-      "granularity": "District"
-    },
-    "usage": {
-      "license": "Open Government Data License - India",
-      "access_constraints": "None - Public Data",
-      "use_cases": [
-        "AI/ML training",
-        "Policy analysis",
-        "Research",
-        "Livestock population estimation",
-        "Resource planning"
-      ],
-      "target_audience": [
-        "Researchers",
-        "Data Scientists",
-        "Policy Makers",
-        "Agricultural Organizations",
-        "Startups"
-      ]
-    },
-    "technical_metadata": {
-      "format": "CSV",
-      "original_filename": "KARNATAKA_LIVESTOCK.csv",
-      "row_count": 5,
-      "column_count": 7,
-      "columns": [
-        "district",
-        "state",
-        "cattle_count",
-        "buffalo_count",
-        "goat_count",
-        "sheep_count",
-        "year"
-      ],
-      "data_quality": {
-        "completeness": 1.0,
-        "standardized": true,
-        "ai_ready": true
-      },
-      "transformations_applied": {
-        "DISTRICT": "district",
-        "STATE": "state",
-        "TOTAL_CATTLE": "cattle_count",
-        "BUFALLO_POPULATION": "buffalo_count",
-        "GOAT_NOS": "goat_count",
-        "SHEEP_NOS": "sheep_count",
-        "YEAR": "year"
-      }
-    }
-  },
-  {
-    "catalog_info": {
-      "title": "District-wise Livestock Census - Uttar Pradesh (2023)",
-      "description": "This dataset provides the count of cattle, buffalo, goat, and sheep at the district level for Uttar Pradesh in 2023. It is valuable for AI/ML applications focused on livestock management, resource allocation, and predicting agricultural trends. The data can also support policy decisions related to animal husbandry and rural development.",
-      "sector": "Livestock",
-      "keywords": [
-        "livestock",
-        "census",
-        "cattle",
-        "buffalo",
-        "goat",
-        "sheep",
-        "agriculture",
-        "Uttar Pradesh",
-        "animal husbandry"
-      ],
-      "language": "English",
-      "update_frequency": "Annual"
-    },
-    "provenance": {
-      "source": "Ministry of Fisheries, Animal Husbandry & Dairying",
-      "publisher": "Department of Animal Husbandry, Government of Uttar Pradesh",
+      "source": "Ministry of Education",
+      "publisher": "Department of School Education",
       "jurisdiction": "Uttar Pradesh",
       "data_owner": "Government of India",
       "contact": "Not available"
     },
     "spatial_temporal": {
       "temporal_coverage": "2023",
-      "spatial_coverage": "Uttar Pradesh State",
+      "spatial_coverage": "Lucknow and Varanasi Districts, Uttar Pradesh",
       "granularity": "District"
     },
     "usage": {
@@ -195,554 +36,142 @@
         "AI/ML training",
         "Policy analysis",
         "Research",
-        "Livestock population estimation",
-        "Resource planning"
+        "Educational planning",
+        "Resource allocation"
       ],
       "target_audience": [
         "Researchers",
         "Data Scientists",
         "Policy Makers",
-        "Agricultural Organizations",
+        "Educational Administrators",
         "Startups"
       ]
     },
     "technical_metadata": {
       "format": "CSV",
-      "original_filename": "livestock_data_raw.csv",
-      "row_count": 5,
-      "column_count": 7,
+      "original_filename": "Edu_Report_Zone1.csv",
+      "row_count": 10,
+      "column_count": 5,
       "columns": [
         "district",
-        "state",
-        "cattle_count",
-        "buffalo_count",
-        "goat_count",
-        "sheep_count",
-        "year"
+        "institution",
+        "student_count",
+        "pass_rate",
+        "system_code"
       ],
       "data_quality": {
-        "completeness": 0.89,
+        "completeness": 1.0,
         "standardized": true,
         "ai_ready": true
       },
       "transformations_applied": {
+        "Zilla": "district",
+        "Sys_Code": "system_code",
+        "Institutions": "institution",
+        "Pass_Rate": "pass_rate",
+        "Total_Students": "student_count"
+      }
+    }
+  },
+  {
+    "catalog_info": {
+      "title": "District-wise Health Infrastructure Summary",
+      "description": "This dataset provides a summary of health infrastructure at the district level, including bed capacity, OPD visits, and specialist counts. It is intended for use in AI/ML applications focused on healthcare resource allocation, demand forecasting, and health service improvement. The data can also support policy analysis related to healthcare access and equity.",
+      "sector": "Health and Education",
+      "keywords": [
+        "health infrastructure",
+        "bed capacity",
+        "OPD visits",
+        "specialists",
+        "district level",
+        "healthcare access",
+        "resource allocation"
+      ],
+      "language": "English",
+      "update_frequency": "Annual"
+    },
+    "provenance": {
+      "source": "Ministry of Health and Family Welfare",
+      "publisher": "National Health Mission",
+      "jurisdiction": "India",
+      "data_owner": "Government of India",
+      "contact": "Not available"
+    },
+    "spatial_temporal": {
+      "temporal_coverage": "Not specified - Assumed recent year based on data availability",
+      "spatial_coverage": "Multiple States/Districts - India",
+      "granularity": "District"
+    },
+    "usage": {
+      "license": "Open Government Data License - India",
+      "access_constraints": "None - Public Data",
+      "use_cases": [
+        "AI/ML training",
+        "Policy analysis",
+        "Research",
+        "Healthcare planning",
+        "Resource optimization"
+      ],
+      "target_audience": [
+        "Researchers",
+        "Data Scientists",
+        "Policy Makers",
+        "Healthcare Administrators",
+        "Startups"
+      ]
+    },
+    "technical_metadata": {
+      "format": "CSV",
+      "original_filename": "Health_Infra_Summary.csv",
+      "row_count": 10,
+      "column_count": 4,
+      "columns": [
+        "district",
+        "bed_capacity",
+        "opd_visits",
+        "specialist_count"
+      ],
+      "data_quality": {
+        "completeness": 0.92,
+        "standardized": true,
+        "ai_ready": true
+      },
+      "transformations_applied": {
+        "Bed_Capacity": "bed_capacity",
+        "OPD_Visits": "opd_visits",
         "Dist": "district",
-        "St": "state",
-        "Cattle": "cattle_count",
-        "Buffalo": "buffalo_count",
-        "Goat": "goat_count",
-        "Sheep": "sheep_count",
-        "Yr": "year"
+        "Specialists": "specialist_count"
       }
     }
   },
   {
     "catalog_info": {
-      "title": "District-wise Livestock Census - Maharashtra (2021)",
-      "description": "This dataset provides the count of major livestock species (cattle, buffalo, goat, and sheep) at the district level in Maharashtra. It is valuable for AI/ML applications focused on agricultural planning, livestock management, and predicting market trends. The data supports analysis of livestock distribution and population dynamics.",
-      "sector": "Livestock",
+      "title": "National Crime Records Bureau - Suicide Statistics",
+      "description": "This dataset contains statistics on suicide incidents reported across various jurisdictions in India, categorized by primary cause and gender. It can be used for AI/ML applications aimed at identifying risk factors, predicting suicide rates, and informing preventative interventions. The data supports analysis of trends and patterns related to suicide across different regions and demographics.",
+      "sector": "Health and Education",
       "keywords": [
-        "livestock",
-        "census",
-        "cattle",
-        "buffalo",
-        "goat",
-        "sheep",
-        "Maharashtra",
-        "agriculture",
-        "animal husbandry"
-      ],
-      "language": "English",
-      "update_frequency": "Annual"
-    },
-    "provenance": {
-      "source": "Department of Animal Husbandry, Government of Maharashtra (Inferred)",
-      "publisher": "Directorate of Economics and Statistics, Maharashtra (Inferred)",
-      "jurisdiction": "Maharashtra State",
-      "data_owner": "Government of Maharashtra",
-      "contact": "Not available"
-    },
-    "spatial_temporal": {
-      "temporal_coverage": "2021",
-      "spatial_coverage": "Maharashtra State",
-      "granularity": "District"
-    },
-    "usage": {
-      "license": "Open Government Data License - India",
-      "access_constraints": "None - Public Data",
-      "use_cases": [
-        "AI/ML training",
-        "Livestock population estimation",
-        "Policy analysis",
-        "Resource allocation",
-        "Research"
-      ],
-      "target_audience": [
-        "Researchers",
-        "Data Scientists",
-        "Policy Makers",
-        "Agricultural Economists",
-        "Livestock Farmers",
-        "Startups"
-      ]
-    },
-    "technical_metadata": {
-      "format": "CSV",
-      "original_filename": "maharashtra_livestock_census_2023.csv",
-      "row_count": 6,
-      "column_count": 7,
-      "columns": [
-        "district",
-        "state",
-        "cattle_count",
-        "buffalo_count",
-        "goat_count",
-        "sheep_count",
-        "year"
-      ],
-      "data_quality": {
-        "completeness": 1.0,
-        "standardized": true,
-        "ai_ready": true
-      },
-      "transformations_applied": {
-        "District_Name": "district",
-        "State_Name": "state",
-        "Cattle_Count": "cattle_count",
-        "Buffalo_Count": "buffalo_count",
-        "Goat_Count": "goat_count",
-        "Sheep_Count": "sheep_count",
-        "Census_Year": "year"
-      }
-    }
-  },
-  {
-    "catalog_info": {
-      "title": "District-wise Livestock Census - Madhya Pradesh (2021)",
-      "description": "This dataset provides the count of major livestock species (cattle, buffalo, goat, and sheep) at the district level in Madhya Pradesh for the year 2021. It is valuable for AI/ML applications focused on livestock population estimation, resource allocation, and agricultural planning. The data can also be used for predictive modeling of livestock dynamics.",
-      "sector": "Livestock",
-      "keywords": [
-        "livestock",
-        "census",
-        "cattle",
-        "buffalo",
-        "goat",
-        "sheep",
-        "population",
-        "Madhya Pradesh",
-        "agriculture"
-      ],
-      "language": "English",
-      "update_frequency": "Annual"
-    },
-    "provenance": {
-      "source": "Ministry of Fisheries, Animal Husbandry & Dairying",
-      "publisher": "Department of Animal Husbandry, Government of Madhya Pradesh",
-      "jurisdiction": "Madhya Pradesh",
-      "data_owner": "Government of India",
-      "contact": "Not available"
-    },
-    "spatial_temporal": {
-      "temporal_coverage": "2021",
-      "spatial_coverage": "Madhya Pradesh State",
-      "granularity": "District"
-    },
-    "usage": {
-      "license": "Open Government Data License - India",
-      "access_constraints": "None - Public Data",
-      "use_cases": [
-        "AI/ML training",
-        "Policy analysis",
-        "Research",
-        "Livestock management",
-        "Predictive modeling"
-      ],
-      "target_audience": [
-        "Researchers",
-        "Data Scientists",
-        "Policy Makers",
-        "Agricultural Experts",
-        "Startups"
-      ]
-    },
-    "technical_metadata": {
-      "format": "CSV",
-      "original_filename": "mp_livestock_census.csv",
-      "row_count": 5,
-      "column_count": 8,
-      "columns": [
-        "district",
-        "state",
-        "cattle_count",
-        "buffalo_count",
-        "goat_count",
-        "sheep_count",
-        "year",
-        "survey_officer"
-      ],
-      "data_quality": {
-        "completeness": 1.0,
-        "standardized": true,
-        "ai_ready": true
-      },
-      "transformations_applied": {
-        "District": "district",
-        "State": "state",
-        "Cattle": "cattle_count",
-        "Buffalo": "buffalo_count",
-        "Goat": "goat_count",
-        "Sheep": "sheep_count",
-        "Year": "year",
-        "Survey_Officer": "survey_officer"
-      }
-    }
-  },
-  {
-    "catalog_info": {
-      "title": "District-wise Livestock Census - Rajasthan",
-      "description": "This dataset provides the count of major livestock species (cattle, buffalo, goat, and sheep) at the district level in Rajasthan. It is valuable for AI/ML applications focused on livestock population estimation, resource allocation, and agricultural planning.",
-      "sector": "Livestock",
-      "keywords": [
-        "livestock",
-        "census",
-        "Rajasthan",
-        "cattle",
-        "buffalo",
-        "goat",
-        "sheep",
-        "agriculture",
-        "animal husbandry"
-      ],
-      "language": "English",
-      "update_frequency": "Annual"
-    },
-    "provenance": {
-      "source": "Department of Animal Husbandry, Government of Rajasthan (Inferred)",
-      "publisher": "Directorate of Economics and Statistics, Rajasthan (Inferred)",
-      "jurisdiction": "Rajasthan State",
-      "data_owner": "Government of Rajasthan",
-      "contact": "Not available"
-    },
-    "spatial_temporal": {
-      "temporal_coverage": "2021-2022",
-      "spatial_coverage": "Rajasthan State",
-      "granularity": "District"
-    },
-    "usage": {
-      "license": "Open Government Data License - India",
-      "access_constraints": "None - Public Data",
-      "use_cases": [
-        "AI/ML training",
-        "Livestock population modeling",
-        "Policy analysis",
-        "Resource allocation",
-        "Research"
-      ],
-      "target_audience": [
-        "Researchers",
-        "Data Scientists",
-        "Policy Makers",
-        "Agricultural Experts",
-        "Startups"
-      ]
-    },
-    "technical_metadata": {
-      "format": "CSV",
-      "original_filename": "rajasthan_pashudhan_ganana.csv",
-      "row_count": 6,
-      "column_count": 7,
-      "columns": [
-        "district",
-        "state",
-        "cattle_count",
-        "buffalo_count",
-        "goat_count",
-        "sheep_count",
-        "year"
-      ],
-      "data_quality": {
-        "completeness": 1.0,
-        "standardized": true,
-        "ai_ready": true
-      },
-      "transformations_applied": {
-        "zillakanaam": "district",
-        "rajyanaam": "state",
-        "gau_sankhya": "cattle_count",
-        "bhains_sankhya": "buffalo_count",
-        "bakri_sankhya": "goat_count",
-        "bhed_sankhya": "sheep_count",
-        "varsh": "year"
-      }
-    }
-  },
-  {
-    "catalog_info": {
-      "title": "District-wise Livestock Census - Tamil Nadu (2021)",
-      "description": "This dataset provides the count of different livestock animals (cattle, buffalo, goat, and sheep) at the district level in Tamil Nadu for the year 2021. It can be used for AI/ML applications related to livestock management, resource allocation, and predictive analysis of animal populations. The data supports applications in precision agriculture and animal health monitoring.",
-      "sector": "Livestock",
-      "keywords": [
-        "livestock",
-        "census",
-        "animal count",
-        "Tamil Nadu",
-        "agriculture",
-        "cattle",
-        "buffalo",
-        "goat",
-        "sheep"
-      ],
-      "language": "English",
-      "update_frequency": "Annual"
-    },
-    "provenance": {
-      "source": "Department of Animal Husbandry and Dairying, Tamil Nadu",
-      "publisher": "Directorate of Economics and Statistics, Tamil Nadu",
-      "jurisdiction": "Tamil Nadu",
-      "data_owner": "Government of Tamil Nadu",
-      "contact": "Not available"
-    },
-    "spatial_temporal": {
-      "temporal_coverage": "2021",
-      "spatial_coverage": "Tamil Nadu State",
-      "granularity": "District"
-    },
-    "usage": {
-      "license": "Open Government Data License - India",
-      "access_constraints": "None - Public Data",
-      "use_cases": [
-        "AI/ML training",
-        "Livestock population estimation",
-        "Resource planning",
-        "Policy analysis",
-        "Research"
-      ],
-      "target_audience": [
-        "Researchers",
-        "Data Scientists",
-        "Policy Makers",
-        "Agriculture Professionals",
-        "Startups"
-      ]
-    },
-    "technical_metadata": {
-      "format": "CSV",
-      "original_filename": "TamilNadu_AnimalCensus.csv",
-      "row_count": 6,
-      "column_count": 7,
-      "columns": [
-        "district",
-        "state",
-        "cattle_count",
-        "buffalo_count",
-        "goat_count",
-        "sheep_count",
-        "year"
-      ],
-      "data_quality": {
-        "completeness": 1.0,
-        "standardized": true,
-        "ai_ready": true
-      },
-      "transformations_applied": {
-        "District Name": "district",
-        "State Name": "state",
-        "No of Cattle": "cattle_count",
-        "No of Buffalo": "buffalo_count",
-        "Goat Population": "goat_count",
-        "Sheep Population": "sheep_count",
-        "Year": "year"
-      }
-    }
-  },
-  {
-    "catalog_info": {
-      "title": "District-wise Livestock Census Data - Uttar Pradesh",
-      "description": "This dataset provides the count of cattle, buffalo, goat, and sheep at the district level in Uttar Pradesh. It is valuable for AI/ML applications focused on livestock management, resource allocation, and predicting animal population trends. The data supports analysis of livestock distribution and can be used for developing targeted interventions.",
-      "sector": "Livestock",
-      "keywords": [
-        "livestock",
-        "animal husbandry",
-        "cattle",
-        "buffalo",
-        "goat",
-        "sheep",
-        "census",
-        "population",
-        "agriculture"
-      ],
-      "language": "English",
-      "update_frequency": "Annual"
-    },
-    "provenance": {
-      "source": "Ministry of Fisheries, Animal Husbandry & Dairying",
-      "publisher": "Department of Animal Husbandry, Uttar Pradesh",
-      "jurisdiction": "Uttar Pradesh",
-      "data_owner": "Government of Uttar Pradesh",
-      "contact": "Not available"
-    },
-    "spatial_temporal": {
-      "temporal_coverage": "2021-2023",
-      "spatial_coverage": "Uttar Pradesh",
-      "granularity": "District"
-    },
-    "usage": {
-      "license": "Open Government Data License - India",
-      "access_constraints": "None - Public Data",
-      "use_cases": [
-        "AI/ML training",
-        "Policy analysis",
-        "Research",
-        "Livestock planning",
-        "Predictive modeling"
-      ],
-      "target_audience": [
-        "Researchers",
-        "Data Scientists",
-        "Policy Makers",
-        "Agricultural Experts",
-        "Startups"
-      ]
-    },
-    "technical_metadata": {
-      "format": "CSV",
-      "original_filename": "up_animal_husbandry_data.csv",
-      "row_count": 7,
-      "column_count": 7,
-      "columns": [
-        "district",
-        "state",
-        "cattle_count",
-        "buffalo_count",
-        "goat_count",
-        "sheep_count",
-        "year"
-      ],
-      "data_quality": {
-        "completeness": 1.0,
-        "standardized": true,
-        "ai_ready": true
-      },
-      "transformations_applied": {
-        "dist": "district",
-        "state": "state",
-        "cattle": "cattle_count",
-        "buffaloes": "buffalo_count",
-        "goats": "goat_count",
-        "sheep": "sheep_count",
-        "census_year": "year"
-      }
-    }
-  },
-  {
-    "catalog_info": {
-      "title": "District-wise Livestock Census - West Bengal (2022-2023)",
-      "description": "This dataset provides the count of cattle, buffalo, goat, and sheep at the district level in West Bengal. It is valuable for AI/ML applications focused on livestock management, resource allocation, and predicting agricultural trends. The data supports analysis of livestock distribution and population dynamics.",
-      "sector": "Livestock",
-      "keywords": [
-        "livestock",
-        "census",
-        "cattle",
-        "buffalo",
-        "goat",
-        "sheep",
-        "agriculture",
-        "West Bengal",
-        "district"
-      ],
-      "language": "English",
-      "update_frequency": "Annual"
-    },
-    "provenance": {
-      "source": "Ministry of Fisheries, Animal Husbandry & Dairying",
-      "publisher": "Department of Animal and Fisheries Resources, Government of West Bengal",
-      "jurisdiction": "West Bengal",
-      "data_owner": "Government of West Bengal",
-      "contact": "Not available"
-    },
-    "spatial_temporal": {
-      "temporal_coverage": "2022-2023",
-      "spatial_coverage": "West Bengal State",
-      "granularity": "District"
-    },
-    "usage": {
-      "license": "Open Government Data License - India",
-      "access_constraints": "None - Public Data",
-      "use_cases": [
-        "AI/ML training",
-        "Policy analysis",
-        "Research",
-        "Livestock population estimation",
-        "Resource planning"
-      ],
-      "target_audience": [
-        "Researchers",
-        "Data Scientists",
-        "Policy Makers",
-        "Agricultural Experts",
-        "Startups"
-      ]
-    },
-    "technical_metadata": {
-      "format": "CSV",
-      "original_filename": "wb_livestock_data_2022.csv",
-      "row_count": 6,
-      "column_count": 7,
-      "columns": [
-        "district",
-        "state",
-        "cattle_count",
-        "buffalo_count",
-        "goat_count",
-        "sheep_count",
-        "year"
-      ],
-      "data_quality": {
-        "completeness": 1.0,
-        "standardized": true,
-        "ai_ready": true
-      },
-      "transformations_applied": {
-        "Dist_Code": "district",
-        "St": "state",
-        "Cat_Pop": "cattle_count",
-        "Buf_Pop": "buffalo_count",
-        "Gt_Pop": "goat_count",
-        "Shp_Pop": "sheep_count",
-        "Yr": "year"
-      }
-    }
-  },
-  {
-    "catalog_info": {
-      "title": "District-wise Livestock Census - Western India (2023)",
-      "description": "This dataset provides the count of major livestock species (cattle, buffalo, goat, and sheep) at the district level across several western Indian states. It is valuable for AI/ML applications focused on livestock management, disease prediction, and agricultural planning. The data supports analysis of livestock distribution and trends.",
-      "sector": "Livestock",
-      "keywords": [
-        "livestock",
-        "census",
-        "cattle",
-        "buffalo",
-        "goat",
-        "sheep",
-        "agriculture",
-        "animal husbandry",
+        "suicide",
+        "mental health",
+        "NCRB",
+        "crime statistics",
+        "public health",
         "India",
-        "district"
+        "gender",
+        "cause of death"
       ],
       "language": "English",
       "update_frequency": "Annual"
     },
     "provenance": {
-      "source": "Ministry of Fisheries, Animal Husbandry & Dairying",
-      "publisher": "Department of Animal Husbandry, Government of Gujarat and Rajasthan",
-      "jurisdiction": "Gujarat, Rajasthan",
+      "source": "National Crime Records Bureau (NCRB)",
+      "publisher": "Ministry of Home Affairs, Government of India",
+      "jurisdiction": "Multiple States/Districts in India",
       "data_owner": "Government of India",
       "contact": "Not available"
     },
     "spatial_temporal": {
-      "temporal_coverage": "2023",
-      "spatial_coverage": "Gujarat and Rajasthan States",
+      "temporal_coverage": "2022",
+      "spatial_coverage": "Multiple States and Districts in India",
       "granularity": "District"
     },
     "usage": {
@@ -750,32 +179,32 @@
       "access_constraints": "None - Public Data",
       "use_cases": [
         "AI/ML training",
-        "Livestock population estimation",
+        "Predictive modeling",
         "Policy analysis",
         "Research",
-        "Predictive modeling"
+        "Public health monitoring"
       ],
       "target_audience": [
         "Researchers",
         "Data Scientists",
         "Policy Makers",
-        "Agricultural Organizations",
+        "Public Health Professionals",
         "Startups"
       ]
     },
     "technical_metadata": {
       "format": "CSV",
-      "original_filename": "western_india_livestock_summary.csv",
-      "row_count": 9,
+      "original_filename": "NCRB_Suicide_Stats.csv",
+      "row_count": 10,
       "column_count": 7,
       "columns": [
-        "district",
-        "state",
-        "cattle_count",
-        "buffalo_count",
-        "goat_count",
-        "sheep_count",
-        "year"
+        "system_code",
+        "time_period",
+        "jurisdiction",
+        "primary_cause",
+        "female_deaths",
+        "male_count",
+        "row_id"
       ],
       "data_quality": {
         "completeness": 1.0,
@@ -783,13 +212,13 @@
         "ai_ready": true
       },
       "transformations_applied": {
-        "Location": "district",
-        "Region": "state",
-        "Bovine_Cattle": "cattle_count",
-        "Bovine_Buffalo": "buffalo_count",
-        "Small_Ruminants_Goat": "goat_count",
-        "Small_Ruminants_Sheep": "sheep_count",
-        "Data_Year": "year"
+        "Time_Period": "time_period",
+        "Jurisdiction": "jurisdiction",
+        "Primary_Cause": "primary_cause",
+        "Female_Deaths": "female_deaths",
+        "M_Count": "male_count",
+        "Sys_Code": "system_code",
+        "Row_ID": "row_id"
       }
     }
   }

@@ -1,0 +1,11 @@
+district,institution,student_count,pass_rate,system_code
+Lucknow,156,22304,89.32,X-14
+Varanasi,185,19094,87.19,X-26
+Lucknow,95,35249,84.92,X-40
+Bhopal,75,11867,96.54,X-68
+Bhopal,139,49782,73.81,X-78
+Nagpur,56,43888,94.35,X-85
+Varanasi,111,44491,79.76,X-62
+Jaipur,128,26628,93.08,X-11
+Indore,80,37468,92.13,X-91
+Varanasi,77,14845,92.72,X-95

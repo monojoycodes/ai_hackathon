@@ -1,0 +1,11 @@
+system_code,time_period,jurisdiction,primary_cause,female_deaths,male_count,row_id
+X-52,2022,Bhopal,nan,100,459,0
+X-54,2022,Varanasi,Family,163,145,1
+X-77,2024,nan,Health,139,121,2
+X-45,2022,nan,Health,66,126,3
+X-26,2022,Nagpur,Family,57,102,4
+X-53,2023,Indore,Other,188,466,5
+X-13,2024,Jaipur,Other,66,97,6
+X-87,2023,Indore,Other,138,11,7
+X-96,2023,Indore,Financial,28,285,8
+X-69,2022,Indore,Other,42,190,9

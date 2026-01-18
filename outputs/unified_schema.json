@@ -1,117 +1,120 @@
 {
-  "domain": "agriculture_livestock",
+  "domain": "health_education_social_services",
   "column_mappings": {
     "district": [
-      "district",
-      "dist",
-      "District",
-      "DISTRICT",
-      "District_Name",
-      "districtName",
-      "District Name",
-      "zillakanaam",
       "Dist",
-      "Dist_Code",
-      "Location",
+      "district",
+      "DISTRICT",
+      "Districts",
+      "Zilla",
+      "zillakanaam",
       "jilla"
     ],
-    "state": [
-      "state",
-      "State",
-      "STATE",
-      "State_Name",
-      "stateName",
-      "State Name",
-      "rajyanaam",
-      "St",
-      "Region"
+    "institution": [
+      "Institutions",
+      "institution",
+      "INSTITUTIONS",
+      "Institution"
     ],
-    "cattle_count": [
-      "cattle",
-      "Cattle",
-      "CATTLE",
-      "Cattle_Count",
-      "cattleCount",
-      "gau_sankhya",
-      "Total_Cattle",
-      "TOTAL_CATTLE",
-      "No of Cattle",
-      "Bovine_Cattle",
-      "Cat_Pop"
+    "student_count": [
+      "Total_Students",
+      "total_students",
+      "TOTAL_STUDENTS",
+      "Student_Count",
+      "studentCount"
     ],
-    "buffalo_count": [
-      "buffalo",
-      "Buffalo",
-      "BUFFALO",
-      "Buffalo_Count",
-      "buffaloCount",
-      "buffaloes",
-      "bhains_sankhya",
-      "BUFALLO_POPULATION",
-      "No of Buffalo",
-      "Bovine_Buffalo",
-      "Buf_Pop"
+    "pass_rate": [
+      "Pass_Rate",
+      "pass_rate",
+      "PASS_RATE",
+      "PassRate",
+      "passRate"
     ],
-    "goat_count": [
-      "goat",
-      "Goat",
-      "GOAT",
-      "Goat_Count",
-      "goatCount",
-      "goats",
-      "bakri_sankhya",
-      "GOAT_NOS",
-      "Goat Population",
-      "Small_Ruminants_Goat",
-      "Gt_Pop"
+    "system_code": [
+      "Sys_Code",
+      "sys_code",
+      "SYS_CODE",
+      "SystemCode",
+      "systemCode"
     ],
-    "sheep_count": [
-      "sheep",
-      "Sheep",
-      "SHEEP",
-      "Sheep_Count",
-      "sheepCount",
-      "bhed_sankhya",
-      "SHEEP_NOS",
-      "Sheep Population",
-      "Small_Ruminants_Sheep",
-      "Shp_Pop"
+    "bed_capacity": [
+      "Bed_Capacity",
+      "bed_capacity",
+      "BED_CAPACITY",
+      "BedCapacity"
     ],
-    "year": [
-      "year",
-      "Year",
-      "YEAR",
-      "yr",
-      "Yr",
-      "census_year",
-      "surveyYear",
-      "Census_Year",
-      "varsh",
-      "Data_Year"
+    "opd_visits": [
+      "OPD_Visits",
+      "opd_visits",
+      "OPD_VISITS",
+      "OpdVisits"
     ],
-    "survey_officer": [
-      "Survey_Officer",
-      "survey_officer",
-      "officer"
+    "specialist_count": [
+      "Specialists",
+      "specialists",
+      "SPECIALISTS",
+      "SpecialistCount"
+    ],
+    "time_period": [
+      "Time_Period",
+      "time_period",
+      "TIME_PERIOD",
+      "TimePeriod"
+    ],
+    "jurisdiction": [
+      "Jurisdiction",
+      "jurisdiction",
+      "JURISDICTION",
+      "JurisdictionName"
+    ],
+    "primary_cause": [
+      "Primary_Cause",
+      "primary_cause",
+      "PRIMARY_CAUSE",
+      "PrimaryCause"
+    ],
+    "female_deaths": [
+      "Female_Deaths",
+      "female_deaths",
+      "FEMALE_DEATHS",
+      "FemaleDeathCount"
+    ],
+    "male_count": [
+      "M_Count",
+      "m_count",
+      "M_COUNT",
+      "MaleCount"
+    ],
+    "row_id": [
+      "Row_ID",
+      "row_id",
+      "ROW_ID",
+      "RowId"
     ]
   },
   "column_types": {
     "district": "string",
-    "state": "string",
-    "cattle_count": "integer",
-    "buffalo_count": "integer",
-    "goat_count": "integer",
-    "sheep_count": "integer",
-    "year": "integer",
-    "survey_officer": "string"
+    "institution": "integer",
+    "student_count": "integer",
+    "pass_rate": "float",
+    "system_code": "string",
+    "bed_capacity": "float",
+    "opd_visits": "float",
+    "specialist_count": "float",
+    "time_period": "integer",
+    "jurisdiction": "string",
+    "primary_cause": "string",
+    "female_deaths": "integer",
+    "male_count": "integer",
+    "row_id": "integer"
   },
   "required_columns": [
     "district",
-    "year"
+    "time_period"
   ],
   "data_standards": {
     "jurisdiction_level": "District",
-    "sector": "Livestock",
-    "ministry": "Ministry of Fisheries, Animal Husbandry & Dairying"
+    "sector": "Health and Education",
+    "ministry": "Ministry of Health and Family Welfare, Ministry of Education"
   }
 }
