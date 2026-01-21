@@ -1,120 +1,121 @@
 {
-  "domain": "health_education_social_services",
+  "domain": "transportation_electric_vehicles",
   "column_mappings": {
-    "district": [
-      "Dist",
-      "district",
-      "DISTRICT",
-      "Districts",
-      "Zilla",
-      "zillakanaam",
-      "jilla"
+    "census_tract": [
+      "2020 Census Tract",
+      "2020 Census Tract"
     ],
-    "institution": [
-      "Institutions",
-      "institution",
-      "INSTITUTIONS",
-      "Institution"
+    "city": [
+      "City",
+      "city",
+      "CITY"
     ],
-    "student_count": [
-      "Total_Students",
-      "total_students",
-      "TOTAL_STUDENTS",
-      "Student_Count",
-      "studentCount"
+    "cafv_eligibility": [
+      "Clean Alternative Fuel Vehicle (CAFV) Eligibility",
+      "Clean Alternative Fuel Vehicle (CAFV) Eligibility",
+      "CAFV Eligibility",
+      "cafv_eligibility"
     ],
-    "pass_rate": [
-      "Pass_Rate",
-      "pass_rate",
-      "PASS_RATE",
-      "PassRate",
-      "passRate"
+    "county": [
+      "County",
+      "county",
+      "COUNTY"
     ],
-    "system_code": [
-      "Sys_Code",
-      "sys_code",
-      "SYS_CODE",
-      "SystemCode",
-      "systemCode"
+    "vehicle_id": [
+      "DOL Vehicle ID",
+      "DOL Vehicle ID",
+      "dol_vehicle_id",
+      "Vehicle ID"
     ],
-    "bed_capacity": [
-      "Bed_Capacity",
-      "bed_capacity",
-      "BED_CAPACITY",
-      "BedCapacity"
+    "electric_range": [
+      "Electric Range",
+      "electric_range",
+      "Electric Range",
+      "ElectricRange"
     ],
-    "opd_visits": [
-      "OPD_Visits",
-      "opd_visits",
-      "OPD_VISITS",
-      "OpdVisits"
+    "electric_utility": [
+      "Electric Utility",
+      "electric_utility",
+      "Electric Utility",
+      "Utility"
     ],
-    "specialist_count": [
-      "Specialists",
-      "specialists",
-      "SPECIALISTS",
-      "SpecialistCount"
+    "ev_type": [
+      "Electric Vehicle Type",
+      "electric_vehicle_type",
+      "EV Type",
+      "Electric VehicleType"
     ],
-    "time_period": [
-      "Time_Period",
-      "time_period",
-      "TIME_PERIOD",
-      "TimePeriod"
+    "legislative_district": [
+      "Legislative District",
+      "legislative_district",
+      "LegislativeDistrict",
+      "District"
     ],
-    "jurisdiction": [
-      "Jurisdiction",
-      "jurisdiction",
-      "JURISDICTION",
-      "JurisdictionName"
+    "make": [
+      "Make",
+      "make",
+      "MAKE"
     ],
-    "primary_cause": [
-      "Primary_Cause",
-      "primary_cause",
-      "PRIMARY_CAUSE",
-      "PrimaryCause"
+    "model": [
+      "Model",
+      "model",
+      "MODEL"
     ],
-    "female_deaths": [
-      "Female_Deaths",
-      "female_deaths",
-      "FEMALE_DEATHS",
-      "FemaleDeathCount"
+    "model_year": [
+      "Model Year",
+      "model_year",
+      "ModelYear",
+      "Year"
     ],
-    "male_count": [
-      "M_Count",
-      "m_count",
-      "M_COUNT",
-      "MaleCount"
+    "postal_code": [
+      "Postal Code",
+      "postal_code",
+      "PostalCode",
+      "Zip Code"
     ],
-    "row_id": [
-      "Row_ID",
-      "row_id",
-      "ROW_ID",
-      "RowId"
+    "state": [
+      "State",
+      "state",
+      "STATE"
+    ],
+    "vin": [
+      "VIN (1-10)",
+      "VIN (1-10)",
+      "vin",
+      "Vehicle Identification Number"
+    ],
+    "vehicle_location": [
+      "Vehicle Location",
+      "vehicle_location",
+      "VehicleLocation"
     ]
   },
   "column_types": {
-    "district": "string",
-    "institution": "integer",
-    "student_count": "integer",
-    "pass_rate": "float",
-    "system_code": "string",
-    "bed_capacity": "float",
-    "opd_visits": "float",
-    "specialist_count": "float",
-    "time_period": "integer",
-    "jurisdiction": "string",
-    "primary_cause": "string",
-    "female_deaths": "integer",
-    "male_count": "integer",
-    "row_id": "integer"
+    "census_tract": "string",
+    "city": "string",
+    "cafv_eligibility": "string",
+    "county": "string",
+    "vehicle_id": "string",
+    "electric_range": "integer",
+    "electric_utility": "string",
+    "ev_type": "string",
+    "legislative_district": "string",
+    "make": "string",
+    "model": "string",
+    "model_year": "integer",
+    "postal_code": "string",
+    "state": "string",
+    "vin": "string",
+    "vehicle_location": "string"
   },
   "required_columns": [
-    "district",
-    "time_period"
+    "vin",
+    "state",
+    "model_year"
   ],
   "data_standards": {
-    "jurisdiction_level": "District",
-    "sector": "Health and Education",
-    "ministry": "Ministry of Health and Family Welfare, Ministry of Education"
+    "jurisdiction_level": "State",
+    "sector": "Transportation",
+    "ministry": "Ministry of Road Transport and Highways"
   }
 }

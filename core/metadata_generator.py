@@ -14,20 +14,21 @@ class MetadataGenerator:
         self.client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
         self.schema = unified_schema
     
-    def generate_metadata(self, file_info, harmonized_df, transformation_log):
+    def generate_metadata(self, file_info, harmonized_df, transformation_log, scraped_metadata=None, stats=None):
         """
-        Generate rich metadata for a harmonized file.
+        Generate rich metadata for a harmonized file using Hybrid approach.
+        Prioritizes Scraped Info > Deterministic Stats > LLM Inference.
         
         Args:
             file_info: Original file information
             harmonized_df: The harmonized DataFrame
             transformation_log: Dict with mapping info
-        
-        Returns:
-            AIKosh-compliant metadata dict
+            scraped_metadata: Dict with title, desc, ministry from Portal (Optional)
+            stats: Dict with deterministic rows/cols/temporal/spatial (Optional)
         """
         
-        prompt = self._build_metadata_prompt(file_info, harmonized_df, transformation_log)
+        # Build prompt with facts
+        prompt = self._build_metadata_prompt(file_info, harmonized_df, transformation_log, scraped_metadata, stats)
         
         try:
             response = self.client.models.generate_content(
@@ -37,7 +38,9 @@ class MetadataGenerator:
             
             metadata = self._parse_response(response.text)
             
-            # Add technical metadata
+            # --- ENFORCEMENT LAYER: Overwrite LLM hallucinations with specific facts ---
+            
+            # 1. Tech Metadata (Row counts, etc)
             metadata['technical_metadata'] = {
                 'format': 'CSV',
                 'original_filename': file_info['filename'],
@@ -45,76 +48,116 @@ class MetadataGenerator:
                 'column_count': len(harmonized_df.columns),
                 'columns': harmonized_df.columns.tolist(),
                 'data_quality': {
-                    'completeness': round(1 - (harmonized_df.isnull().sum().sum() / 
-                                              (len(harmonized_df) * len(harmonized_df.columns))), 2),
                     'standardized': True,
                     'ai_ready': True
                 },
                 'transformations_applied': transformation_log.get('mapping', {})
             }
             
+            if stats:
+                metadata['technical_metadata']['data_quality'].update(stats.get('quality', {}))
+                
+            # 2. Provenance (Use scraped if available)
+            if scraped_metadata and scraped_metadata.get('ministry'):
+                if 'provenance' not in metadata: metadata['provenance'] = {}
+                metadata['provenance']['source'] = scraped_metadata['ministry']
+                metadata['provenance']['publisher'] = "Government of India (via data.gov.in)"
+
+             # 3. Spatial/Temporal (Use deterministic stats)
+            if stats:
+                if 'spatial_temporal' not in metadata: metadata['spatial_temporal'] = {}
+                
+                temp_range = stats.get('temporal', {}).get('range_str')
+                if temp_range and temp_range != 'Unknown':
+                    metadata['spatial_temporal']['temporal_coverage'] = temp_range
+                    
+                spatial = stats.get('spatial', {})
+                if spatial.get('granularity') != 'Unknown':
+                    metadata['spatial_temporal']['granularity'] = spatial['granularity']
+                    # Add specific locations to description or keywords if not present
+                    
             return metadata
             
         except Exception as e:
             print(f"   ⚠️  Metadata generation warning: {e}")
             return self._fallback_metadata(file_info, harmonized_df)
     
-    def _build_metadata_prompt(self, file_info, df, transformation_log):
-        """Build AIKosh-compliant metadata prompt"""
+    def _build_metadata_prompt(self, file_info, df, transformation_log, scraped_metadata, stats):
+        """Build AIKosh-compliant metadata prompt with FACTS"""
         
+        # Prepare context strings
+        scraped_context = "Not Available"
+        if scraped_metadata:
+            scraped_context = f"""
+            - Official Title: {scraped_metadata.get('title')}
+            - Official Description: {scraped_metadata.get('description')}
+            - Ministry/Source: {scraped_metadata.get('ministry')}
+            - Sector: {scraped_metadata.get('sector')}
+            """
+            
+        stats_context = "Not Available"
+        if stats:
+            stats_context = f"""
+            - Temporal Range (Years): {stats.get('temporal', {}).get('range_str')}
+            - Spatial Granularity: {stats.get('spatial', {}).get('granularity')}
+            - Sample Locations: {stats.get('spatial', {}).get('districts', [])} {stats.get('spatial', {}).get('states', [])}
+            """
+            
         return f"""You are a metadata expert for AIKosh (IndiaAI Mission).
+
+FACTS (DO NOT HALLUCINATE THESE):
+=========================================
+OFFICIAL PORTAL CONTEXT:
+{scraped_context}
+
+DETERMINISTIC DATA STATS:
+{stats_context}
+=========================================
 
 DATASET INFORMATION:
 - Original filename: {file_info['filename']}
 - Harmonized columns: {df.columns.tolist()}
 - Sample data:
 {df.head(2).to_string()}
-- Domain: {self.schema.get('domain', 'Unknown')}
-- Sector: {self.schema.get('data_standards', {}).get('sector', 'Unknown')}
 
 YOUR TASK:
-Generate AIKosh/IDMO-compliant metadata for this harmonized dataset.
+Generate AIKosh/IDMO-compliant metadata.
+1. Use the OFFICIAL PORTAL TITLE if available. If not, generate a professional one.
+2. Use the OFFICIAL DESCRIPTION as the base, and append a technical summary of the columns.
+3. Use the DETERMINISTIC STATS for temporal/spatial coverage. Do not guess years if they are listed above.
 
-OUTPUT JSON STRUCTURE (STRICT - NDSAP/IDMO Standards):
+OUTPUT JSON STRUCTURE (STRICT):
 {{
     "catalog_info": {{
-        "title": "Professional, formal title (e.g., 'District-wise Livestock Census - Maharashtra (2023)')",
-        "description": "Clear 2-3 sentence description explaining what data this contains and its purpose for AI/ML applications.",
-        "sector": "{self.schema.get('data_standards', {}).get('sector', 'Agriculture')}",
-        "keywords": ["keyword1", "keyword2", "keyword3", "keyword4"],
+        "title": "Official Title or Professional Generated Title",
+        "description": "Full description (Official + Technical)",
+        "sector": "Sector (Agriculture/Health/Education/etc)",
+        "keywords": ["keyword1", "keyword2"],
         "language": "English",
-        "update_frequency": "Annual/Quarterly/Monthly/One-time"
+        "update_frequency": "Unknown"
     }},
     
     "provenance": {{
-        "source": "{self.schema.get('data_standards', {}).get('ministry', 'Government of India')}",
-        "publisher": "Inferred department/authority",
-        "jurisdiction": "Inferred State/District from data",
-        "data_owner": "Government of [State/India]",
-        "contact": "Not available"
+        "source": "Ministry Name (from context or inferred)",
+        "publisher": "Department Name",
+        "jurisdiction": "State/District",
+        "data_owner": "Government of India"
     }},
     
     "spatial_temporal": {{
-        "temporal_coverage": "Infer year/date range from data (e.g., '2023' or '2020-2023')",
-        "spatial_coverage": "Infer geographic scope (e.g., 'Maharashtra State' or 'Multiple States')",
-        "granularity": "{self.schema.get('data_standards', {}).get('jurisdiction_level', 'District')}"
+        "temporal_coverage": "Use exact years from STATS context",
+        "spatial_coverage": "Geographic scope",
+        "granularity": "District/State/Block"
     }},
     
     "usage": {{
         "license": "Open Government Data License - India",
-        "access_constraints": "None - Public Data",
-        "use_cases": ["AI/ML training", "Policy analysis", "Research"],
-        "target_audience": ["Researchers", "Data Scientists", "Policy Makers", "Startups"]
+        "use_cases": ["AI/ML training", "Policy analysis"],
+        "target_audience": ["Researchers", "Data Scientists"]
     }}
 }}
-
-RULES:
-- Infer missing information from the data itself
-- Be specific about geographic scope if visible in data
-- Identify year/temporal range from data
-- Return ONLY valid JSON, no markdown
 """
-    
+
     def _parse_response(self, response_text):
         """Parse LLM response"""
         try:
@@ -129,17 +172,11 @@ RULES:
             return {}
     
     def _fallback_metadata(self, file_info, df):
-        """Template-based fallback if LLM fails"""
+        """Template-based fallback"""
         return {
             "catalog_info": {
                 "title": f"Government Dataset - {file_info['filename']}",
                 "description": f"Harmonized dataset with {len(df)} records.",
-                "sector": self.schema.get('data_standards', {}).get('sector', 'Unknown'),
-                "keywords": ["government", "data", "india"]
-            },
-            "provenance": {
-                "source": "Government of India",
-                "publisher": "Unknown",
-                "jurisdiction": "India"
+                "sector": "Unknown"
             }
         }

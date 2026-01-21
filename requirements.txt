@@ -1,0 +1,28 @@
+# Core Data Processing
+pandas==2.1.4
+numpy==1.26.2
+openpyxl==3.1.2
+
+# Data Cleaning & Matching
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.23.0
+
+# AI/LLM Integration
+google-generativeai==0.3.2
+groq==0.4.1
+
+# Web Scraping & Portal Extraction
+requests==2.31.0
+beautifulsoup4==4.12.2
+lxml==4.9.4
+
+# Schema Validation
+jsonschema==4.20.0
+
+# Configuration Management
+python-dotenv==1.0.0
+
+# Optional - For enhanced functionality
+# streamlit==1.29.0          # Uncomment if building dashboard
+# plotly==5.18.0             # Uncomment for visualizations
+# geopy==2.4.1               # Uncomment for geocoding
