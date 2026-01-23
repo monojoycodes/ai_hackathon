@@ -1,0 +1,74 @@
+{
+  "catalog_info": {
+    "title": "Kempegowda International Airport Bengaluru - Passenger FAQ",
+    "description": "This dataset contains frequently asked questions (FAQs) and their answers related to passenger travel at Kempegowda International Airport Bengaluru. The data is available in both English and Hindi. \n\n**Technical Summary:** The dataset consists of six columns: 'category' (indicating the FAQ category, e.g., 'Passenger'), 'last_updated' (date of last update), 'faq_question' (English version of the question), 'faq_question' (Hindi version of the question), 'faq_answer' (English version of the answer), and 'faq_answer' (Hindi version of the answer).",
+    "sector": "Transportation",
+    "keywords": [
+      "airport",
+      "FAQ",
+      "passenger",
+      "travel",
+      "Kempegowda International Airport",
+      "Bengaluru",
+      "Hindi",
+      "English"
+    ],
+    "language": "English",
+    "update_frequency": "Unknown"
+  },
+  "provenance": {
+    "source": "Ministry of Civil Aviation (Inferred)",
+    "publisher": "Bangalore International Airport Limited (Inferred)",
+    "jurisdiction": "Karnataka",
+    "data_owner": "Government of India"
+  },
+  "spatial_temporal": {
+    "temporal_coverage": "Unknown",
+    "spatial_coverage": "Kempegowda International Airport Bengaluru, Karnataka, India",
+    "granularity": "Unknown"
+  },
+  "usage": {
+    "license": "Open Government Data License - India",
+    "use_cases": [
+      "AI/ML training",
+      "Chatbot development",
+      "Policy analysis",
+      "Customer service improvement"
+    ],
+    "target_audience": [
+      "Researchers",
+      "Data Scientists",
+      "Airport Authorities",
+      "Travel Agencies"
+    ]
+  },
+  "technical_metadata": {
+    "format": "CSV",
+    "original_filename": "bc015fd1-a544-43b1-b4a2-729475c4580c.csv",
+    "row_count": 172,
+    "column_count": 6,
+    "columns": [
+      "category",
+      "last_updated",
+      "faq_question",
+      "faq_question",
+      "faq_answer",
+      "faq_answer"
+    ],
+    "data_quality": {
+      "standardized": true,
+      "ai_ready": true,
+      "completeness_score": 0.98,
+      "missing_cells": 19,
+      "total_rows": 172
+    },
+    "transformations_applied": {
+      "category": "category",
+      "faqQuestion": "faq_question",
+      "faqAnswer": "faq_answer",
+      "faqQuestionHindi": "faq_question",
+      "faqAnswerHindi": "faq_answer",
+      "lastUpdated": "last_updated"
+    }
+  }
+}

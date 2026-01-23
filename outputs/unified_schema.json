@@ -1,0 +1,214 @@
+{
+  "domain": "health_and_grievance_redressal",
+  "column_mappings": {
+    "district": [
+      "Dist",
+      "district"
+    ],
+    "bed_capacity": [
+      "Bed_Capacity"
+    ],
+    "opd_visits": [
+      "OPD_Visits"
+    ],
+    "specialists": [
+      "Specialists"
+    ],
+    "time_period": [
+      "Time_Period"
+    ],
+    "jurisdiction": [
+      "Jurisdiction"
+    ],
+    "primary_cause": [
+      "Primary_Cause"
+    ],
+    "female_deaths": [
+      "Female_Deaths"
+    ],
+    "m_count": [
+      "M_Count"
+    ],
+    "row_id": [
+      "Row_ID"
+    ],
+    "sys_code": [
+      "Sys_Code"
+    ],
+    "zilla": [
+      "Zilla"
+    ],
+    "total_students": [
+      "Total_Students"
+    ],
+    "pass_rate": [
+      "Pass_Rate"
+    ],
+    "institutions": [
+      "Institutions"
+    ],
+    "category": [
+      "category",
+      "categoryenglish",
+      "categoryHindi"
+    ],
+    "subcategory": [
+      "subcategory"
+    ],
+    "type": [
+      "type"
+    ],
+    "total_received": [
+      "totalReceived"
+    ],
+    "active_grievances_without_escalation": [
+      "activeGrievancesWithoutEscalation"
+    ],
+    "active_grievances_with_escalation": [
+      "activeGrievancesWithEscalation"
+    ],
+    "closed_grievances_without_escalation": [
+      "closedGrievancesWithoutEscalation"
+    ],
+    "closed_grievances_with_escalation": [
+      "closedGrievancesWithEscalation"
+    ],
+    "successful_transfer_in": [
+      "successfulTransferIn"
+    ],
+    "grievances_without_ratings": [
+      "grievancesWithoutRatings"
+    ],
+    "grievances_with_ratings": [
+      "grievancesWithRatings"
+    ],
+    "grievances_with_very_good_rating": [
+      "grievancesWithVeryGoodRating"
+    ],
+    "grievances_with_good_rating": [
+      "grievanceswithgoodrating"
+    ],
+    "grievances_with_ok_rating": [
+      "grievancesWithOKRating"
+    ],
+    "grievances_with_bad_rating": [
+      "grievancesWithBadRating"
+    ],
+    "grievances_with_very_bad_rating": [
+      "grievancesWithVeryBadRating"
+    ],
+    "twitter_grievances": [
+      "twitterGrievances"
+    ],
+    "facebook_grievances": [
+      "facebookGrievances"
+    ],
+    "grievances_additional_info_provided": [
+      "grievancesAdditionalInfoProvided"
+    ],
+    "grievances_additional_info_not_provided": [
+      "grievancesAdditionalInfoNotProvided"
+    ],
+    "grievances_without_feedback": [
+      "grievancesWithoutFeedback"
+    ],
+    "grievances_with_feedback": [
+      "grievancesWithFeedback"
+    ],
+    "grievances_with_feedback_issue_not_resolved": [
+      "grievancesWithFeedbackIssueNotResolved"
+    ],
+    "grievances_with_feedback_issue_resolved": [
+      "grievancesWithFeedbackIssueResolved"
+    ],
+    "airport": [
+      "airport"
+    ],
+    "title_english": [
+      "titleEnglish"
+    ],
+    "description_english": [
+      "descriptionEnglish"
+    ],
+    "email": [
+      "email"
+    ],
+    "phone": [
+      "phone"
+    ],
+    "website": [
+      "website"
+    ],
+    "last_updated": [
+      "last_updated",
+      "lastUpdated"
+    ],
+    "faq_question": [
+      "faqQuestion",
+      "faqQuestionHindi"
+    ],
+    "faq_answer": [
+      "faqAnswer",
+      "faqAnswerHindi"
+    ]
+  },
+  "column_types": {
+    "district": "string",
+    "bed_capacity": "float",
+    "opd_visits": "float",
+    "specialists": "float",
+    "time_period": "string",
+    "jurisdiction": "string",
+    "primary_cause": "string",
+    "female_deaths": "integer",
+    "m_count": "integer",
+    "row_id": "integer",
+    "sys_code": "string",
+    "zilla": "string",
+    "total_students": "integer",
+    "pass_rate": "float",
+    "institutions": "integer",
+    "category": "string",
+    "subcategory": "string",
+    "type": "string",
+    "total_received": "integer",
+    "active_grievances_without_escalation": "integer",
+    "active_grievances_with_escalation": "integer",
+    "closed_grievances_without_escalation": "integer",
+    "closed_grievances_with_escalation": "integer",
+    "successful_transfer_in": "integer",
+    "grievances_without_ratings": "integer",
+    "grievances_with_ratings": "integer",
+    "grievances_with_very_good_rating": "integer",
+    "grievances_with_good_rating": "integer",
+    "grievances_with_ok_rating": "integer",
+    "grievances_with_bad_rating": "integer",
+    "grievances_with_very_bad_rating": "integer",
+    "twitter_grievances": "integer",
+    "facebook_grievances": "integer",
+    "grievances_additional_info_provided": "integer",
+    "grievances_additional_info_not_provided": "integer",
+    "grievances_without_feedback": "integer",
+    "grievances_with_feedback": "integer",
+    "grievances_with_feedback_issue_not_resolved": "integer",
+    "grievances_with_feedback_issue_resolved": "integer",
+    "airport": "string",
+    "title_english": "string",
+    "description_english": "string",
+    "email": "string",
+    "phone": "string",
+    "website": "string",
+    "last_updated": "string",
+    "faq_question": "string",
+    "faq_answer": "string"
+  },
+  "required_columns": [
+    "district",
+    "time_period"
+  ],
+  "data_standards": {
+    "jurisdiction_level": "District",
+    "sector": "Health and Grievance Redressal",
+    "ministry": "Ministry of Health and Family Welfare"
+  }
+}

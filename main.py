@@ -1,31 +1,123 @@
 import os
 import json
 import glob
+import re
+import shutil
+from pathlib import Path
 from core.ingester import Ingester
 from core.cleaner import DataCleaner
 from core.schema_generator import UnifiedSchemaGenerator
 from core.transformer import SchemaTransformer
 from core.metadata_generator import MetadataGenerator
 
+def sanitize_filename(title):
+    """Convert title to safe filename"""
+    filename = title.lower()
+    filename = re.sub(r'[^a-z0-9\s]', '', filename)
+    filename = re.sub(r'\s+', '_', filename)
+    filename = filename.strip('_')
+    if len(filename) > 100:
+        filename = filename[:100].rsplit('_', 1)[0]
+    return filename
+
+def rename_harmonized_files(harmonized_dir):
+    """
+    Rename harmonized files using titles from metadata
+    """
+    print("\n" + "="*70)
+    print("🔄 Renaming Files Using AI-Generated Titles...")
+    print("="*70)
+    
+    # Find all metadata JSON files
+    json_files = list(Path(harmonized_dir).glob('*_metadata.json'))
+    
+    if not json_files:
+        print("⚠️  No metadata files found to rename")
+        return
+    
+    print(f"\nProcessing {len(json_files)} files...\n")
+    
+    renamed_count = 0
+    
+    for json_path in json_files:
+        try:
+            # Read metadata
+            with open(json_path, 'r', encoding='utf-8') as f:
+                metadata = json.load(f)
+            
+            # Extract title
+            title = metadata.get('catalog_info', {}).get('title')
+            
+            if not title:
+                print(f"⚠️  No title in {json_path.name}, skipping")
+                continue
+            
+            # Create safe filename
+            new_base_name = sanitize_filename(title)
+            
+            if not new_base_name:
+                print(f"⚠️  Invalid title: '{title}', skipping")
+                continue
+            
+            # Find corresponding CSV
+            original_base = json_path.stem.replace('_metadata', '')
+            csv_candidates = [
+                Path(harmonized_dir) / f"{original_base}.csv",
+                Path(harmonized_dir) / f"{original_base}_harmonized.csv"
+            ]
+            
+            csv_path = None
+            for candidate in csv_candidates:
+                if candidate.exists():
+                    csv_path = candidate
+                    break
+            
+            if not csv_path:
+                print(f"⚠️  No CSV found for {json_path.name}")
+                continue
+            
+            # New paths
+            new_csv_path = Path(harmonized_dir) / f"{new_base_name}.csv"
+            new_json_path = Path(harmonized_dir) / f"{new_base_name}.json"
+            
+            # Handle duplicates
+            if new_csv_path.exists() or new_json_path.exists():
+                counter = 1
+                while True:
+                    new_csv_path = Path(harmonized_dir) / f"{new_base_name}_{counter}.csv"
+                    new_json_path = Path(harmonized_dir) / f"{new_base_name}_{counter}.json"
+                    if not new_csv_path.exists() and not new_json_path.exists():
+                        break
+                    counter += 1
+            
+            # Display
+            print(f"📝 {title[:60]}...")
+            print(f"   → {new_csv_path.name}")
+            
+            # Rename
+            shutil.move(str(csv_path), str(new_csv_path))
+            shutil.move(str(json_path), str(new_json_path))
+            
+            renamed_count += 1
+            
+        except Exception as e:
+            print(f"❌ Error: {json_path.name}: {e}")
+    
+    print(f"\n✅ Renamed {renamed_count}/{len(json_files)} files")
+
 def run_two_phase_harmonization():
     """
     Two-Phase Harmonization Pipeline:
     Phase 1: Analyze ALL files → Generate unified schema
     Phase 2: Apply unified schema to each file
+    Phase 3: Rename files using AI-generated titles
     """
     
     # Setup
     INPUT_DIR = "uploads"
     OUTPUT_DIR = "outputs/harmonized"
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    
-    
-    # files = glob.glob(f"{INPUT_DIR}/*.csv")
-    
-    # if not files:
-    #     print(f"❌ No CSV files found in '{INPUT_DIR}' folder")
-    #     print("Please add CSV files and run again")
-    #     return
+    os.makedirs("outputs", exist_ok=True)  # Ensure parent dir exists
     
     print("\n" + "="*70)
     print("🚀 AIKosh Metadata Sentinel - Two-Phase Harmonization")
@@ -34,6 +126,7 @@ def run_two_phase_harmonization():
     # Initialize modules
     ingester = Ingester()
     cleaner = DataCleaner()
+    
     # NEW: Initialize Phase 2 modules
     from core.portal_scraper import PortalExtractor
     from core.stats_extractor import StatsExtractor
@@ -41,7 +134,7 @@ def run_two_phase_harmonization():
     portal_extractor = PortalExtractor(output_dir=INPUT_DIR)
     stats_extractor = StatsExtractor()
     
-    # Store scraped metadata to pass to the generator later
+    # Store scraped metadata
     dataset_metadata = None
     
     # User Choice: Scrape or Local
@@ -60,7 +153,6 @@ def run_two_phase_harmonization():
                 resources = extraction_result.get('resources', [])
                 dataset_metadata = extraction_result.get('metadata', {})
                 
-                # Check if we got metadata but NO files (Auth Wall scenario)
                 if not resources:
                     print(f"\n   ⚠️  AUTH WALL DETECTED: Files could not be auto-downloaded.")
                     print(f"   ✅ However, METADATA was successfully scraped: '{dataset_metadata.get('title')}'")
@@ -109,9 +201,9 @@ def run_two_phase_harmonization():
         
         # Extract info
         file_info = ingester.get_file_info(file_path, df)
-        file_info['cleaned_df'] = df  # Store for Phase 2
+        file_info['cleaned_df'] = df
         
-        # NEW: Extract deterministic stats
+        # Extract deterministic stats
         file_info['stats'] = stats_extractor.extract_stats(df)
         print(f"   📊 Stats: {file_info['stats']['temporal']['range_str']} | {file_info['stats']['spatial']['granularity']}")
         
@@ -169,9 +261,7 @@ def run_two_phase_harmonization():
             print(f"   ❌ ERROR: Could not save {output_csv} (file may be open in Excel)")
             continue
         
-        # Generate metadata (Hybrid Approach)
-        # Note: In a real run, 'scraped_metadata' would come from portal_extractor results
-        # We pass the scraped metadata (if any) to help formatting
+        # Generate metadata
         metadata = metadata_generator.generate_metadata(
             file_info, 
             df_harmonized,
@@ -208,8 +298,6 @@ def run_two_phase_harmonization():
         for result in results[1:]:
             if result['columns'] != first_cols:
                 print(f"❌ INCONSISTENCY: {result['original']}")
-                print(f"   Expected: {first_cols}")
-                print(f"   Got: {result['columns']}")
                 all_consistent = False
         
         if all_consistent:
@@ -230,13 +318,17 @@ def run_two_phase_harmonization():
                 print(f"   Total rows: {len(merged):,}")
             except Exception as e:
                 print(f"\n⚠️  Merge test failed: {e}")
-        else:
-            print(f"\n❌ Schema inconsistency detected!")
     
     # Save metadata catalog
     catalog_path = "outputs/metadata_catalog.json"
     with open(catalog_path, 'w') as f:
         json.dump(metadata_catalog, f, indent=2)
+    
+    # =========================================================================
+    # PHASE 4: RENAME FILES USING AI-GENERATED TITLES
+    # =========================================================================
+    
+    rename_harmonized_files(OUTPUT_DIR)
     
     # Final summary
     print("\n" + "="*70)
@@ -250,93 +342,3 @@ def run_two_phase_harmonization():
 
 if __name__ == "__main__":
     run_two_phase_harmonization()
-
-
-
-#     # =========================================================================
-# # PHASE 3: VERIFICATION & OUTPUTS
-# # =========================================================================
-
-# print("\n" + "="*70)
-# print("✅ VERIFICATION: Checking schema consistency...")
-# print("="*70)
-
-# if results:
-#     # Get core columns (columns that appear in most files)
-#     from collections import Counter
-    
-#     # Count column frequency
-#     all_columns = []
-#     for result in results:
-#         all_columns.extend(result['columns'])
-    
-#     column_freq = Counter(all_columns)
-    
-#     # Core columns are those that appear in 70%+ of files
-#     threshold = len(results) * 0.7
-#     core_columns = [col for col, count in column_freq.items() if count >= threshold]
-#     core_columns.sort()  # Sort for consistent ordering
-    
-#     print(f"\n📊 Core columns (appear in {int(threshold)}/{len(results)} files):")
-#     print(f"   {core_columns}")
-    
-#     # Check if all files have the core columns
-#     all_have_core = True
-#     files_missing_core = []
-    
-#     for result in results:
-#         missing = [col for col in core_columns if col not in result['columns']]
-#         if missing:
-#             all_have_core = False
-#             files_missing_core.append({
-#                 'file': result['original'],
-#                 'missing': missing
-#             })
-    
-#     if all_have_core:
-#         print(f"\n🎉 SUCCESS! All {len(results)} files have the CORE schema!")
-#         print(f"   Core columns: {core_columns}")
-        
-#         # Show files with extra columns
-#         files_with_extra = []
-#         for result in results:
-#             extra = [col for col in result['columns'] if col not in core_columns]
-#             if extra:
-#                 files_with_extra.append({
-#                     'file': result['original'],
-#                     'extra': extra
-#                 })
-        
-#         if files_with_extra:
-#             print(f"\n📋 Files with additional columns (this is OK):")
-#             for item in files_with_extra:
-#                 print(f"   {item['file']}: +{item['extra']}")
-        
-#         # Try to merge
-#         try:
-#             import pandas as pd
-#             dfs = [pd.read_csv(r['harmonized']) for r in results]
-#             merged = pd.concat(dfs, ignore_index=True)
-            
-#             merged_path = "outputs/merged_all_data.csv"
-#             merged.to_csv(merged_path, index=False)
-            
-#             print(f"\n✅ BONUS: Successfully merged all files!")
-#             print(f"   Merged dataset: {merged_path}")
-#             print(f"   Total rows: {len(merged):,}")
-#             print(f"   Total columns: {len(merged.columns)}")
-            
-#             # Data quality report
-#             print(f"\n📊 Data Quality Report:")
-#             print(f"   Total cells: {len(merged) * len(merged.columns):,}")
-#             print(f"   Non-null cells: {merged.count().sum():,}")
-#             print(f"   Null cells: {merged.isnull().sum().sum():,}")
-#             completeness = (merged.count().sum() / (len(merged) * len(merged.columns))) * 100
-#             print(f"   Completeness: {completeness:.1f}%")
-            
-#         except Exception as e:
-#             print(f"\n⚠️  Merge test failed: {e}")
-#     else:
-#         print(f"\n⚠️  Some files missing core columns:")
-#         for item in files_missing_core:
-#             print(f"   {item['file']}: missing {item['missing']}")

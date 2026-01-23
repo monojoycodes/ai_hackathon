@@ -1,0 +1,110 @@
+{
+  "catalog_info": {
+    "title": "Grievance Redressal System Data",
+    "description": "This dataset contains information related to grievances received and their resolution status across various categories. \n\nTechnical Summary: The dataset includes details on grievance category, subcategory, type, total grievances received, active and closed grievances (with and without escalation), successful transfers, grievance ratings (very good to very bad), counts from social media platforms (Twitter, Facebook), additional information provided, feedback received, and resolution status of feedback. Columns include: 'category', 'subcategory', 'type', 'total_received', 'active_grievances_without_escalation', 'active_grievances_with_escalation', 'closed_grievances_without_escalation', 'closed_grievances_with_escalation', 'successful_transfer_in', 'grievances_without_ratings', 'grievances_with_ratings', 'grievances_with_very_good_rating', 'grievances_with_good_rating', 'grievances_with_ok_rating', 'grievances_with_bad_rating', 'grievances_with_very_bad_rating', 'twitter_grievances', 'facebook_grievances', 'grievances_additional_info_provided', 'grievances_additional_info_not_provided', 'grievances_without_feedback', 'grievances_with_feedback', 'grievances_with_feedback_issue_not_resolved', 'grievances_with_feedback_issue_resolved'.",
+    "sector": "Government Services",
+    "keywords": [
+      "grievances",
+      "redressal",
+      "customer service",
+      "complaints",
+      "feedback",
+      "resolution",
+      "airline",
+      "ticketing"
+    ],
+    "language": "English",
+    "update_frequency": "Unknown"
+  },
+  "provenance": {
+    "source": "Unknown",
+    "publisher": "Department of Consumer Affairs (Inferred)",
+    "jurisdiction": "National",
+    "data_owner": "Government of India"
+  },
+  "spatial_temporal": {
+    "temporal_coverage": "Unknown",
+    "spatial_coverage": "Unknown",
+    "granularity": "Unknown"
+  },
+  "usage": {
+    "license": "Open Government Data License - India",
+    "use_cases": [
+      "AI/ML training",
+      "Policy analysis",
+      "Performance monitoring",
+      "Customer service improvement"
+    ],
+    "target_audience": [
+      "Researchers",
+      "Data Scientists",
+      "Government Officials",
+      "Policy Makers"
+    ]
+  },
+  "technical_metadata": {
+    "format": "CSV",
+    "original_filename": "7be93611-4e76-4077-8d00-6232d01367cf.csv",
+    "row_count": 1644,
+    "column_count": 24,
+    "columns": [
+      "category",
+      "subcategory",
+      "type",
+      "total_received",
+      "active_grievances_without_escalation",
+      "active_grievances_with_escalation",
+      "closed_grievances_without_escalation",
+      "closed_grievances_with_escalation",
+      "successful_transfer_in",
+      "grievances_without_ratings",
+      "grievances_with_ratings",
+      "grievances_with_very_good_rating",
+      "grievances_with_good_rating",
+      "grievances_with_ok_rating",
+      "grievances_with_bad_rating",
+      "grievances_with_very_bad_rating",
+      "twitter_grievances",
+      "facebook_grievances",
+      "grievances_additional_info_provided",
+      "grievances_additional_info_not_provided",
+      "grievances_without_feedback",
+      "grievances_with_feedback",
+      "grievances_with_feedback_issue_not_resolved",
+      "grievances_with_feedback_issue_resolved"
+    ],
+    "data_quality": {
+      "standardized": true,
+      "ai_ready": true,
+      "completeness_score": 1.0,
+      "missing_cells": 113,
+      "total_rows": 1644
+    },
+    "transformations_applied": {
+      "category": "category",
+      "subcategory": "subcategory",
+      "type": "type",
+      "totalReceived": "total_received",
+      "activeGrievancesWithoutEscalation": "active_grievances_without_escalation",
+      "activeGrievancesWithEscalation": "active_grievances_with_escalation",
+      "closedGrievancesWithoutEscalation": "closed_grievances_without_escalation",
+      "closedGrievancesWithEscalation": "closed_grievances_with_escalation",
+      "successfulTransferIn": "successful_transfer_in",
+      "grievancesWithoutRatings": "grievances_without_ratings",
+      "grievancesWithRatings": "grievances_with_ratings",
+      "grievancesWithVeryGoodRating": "grievances_with_very_good_rating",
+      "grievanceswithgoodrating": "grievances_with_good_rating",
+      "grievancesWithOKRating": "grievances_with_ok_rating",
+      "grievancesWithBadRating": "grievances_with_bad_rating",
+      "grievancesWithVeryBadRating": "grievances_with_very_bad_rating",
+      "twitterGrievances": "twitter_grievances",
+      "facebookGrievances": "facebook_grievances",
+      "grievancesAdditionalInfoProvided": "grievances_additional_info_provided",
+      "grievancesAdditionalInfoNotProvided": "grievances_additional_info_not_provided",
+      "grievancesWithoutFeedback": "grievances_without_feedback",
+      "grievancesWithFeedback": "grievances_with_feedback",
+      "grievancesWithFeedbackIssueNotResolved": "grievances_with_feedback_issue_not_resolved",
+      "grievancesWithFeedbackIssueResolved": "grievances_with_feedback_issue_resolved"
+    }
+  }
+}

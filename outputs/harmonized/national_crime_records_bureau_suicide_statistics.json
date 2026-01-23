@@ -1,0 +1,74 @@
+{
+  "catalog_info": {
+    "title": "National Crime Records Bureau - Suicide Statistics",
+    "description": "This dataset contains statistics related to suicides reported in India. It includes information on the time period, jurisdiction, primary cause of suicide, and the number of female and male deaths. \n\n**Technical Summary:**\n*   **time_period:** Year the suicide data pertains to.\n*   **jurisdiction:**  The city/district where the suicide occurred.\n*   **primary_cause:** The main identified reason for the suicide (may contain missing values).\n*   **female_deaths:** Number of female deaths due to suicide.\n*   **m_count:** Number of male deaths due to suicide.\n*   **row_id:** Unique identifier for each record.\n*   **sys_code:** System code for the record.",
+    "sector": "Health",
+    "keywords": [
+      "suicide",
+      "mental health",
+      "crime statistics",
+      "NCRB",
+      "India",
+      "public health"
+    ],
+    "language": "English",
+    "update_frequency": "Unknown"
+  },
+  "provenance": {
+    "source": "National Crime Records Bureau (NCRB)",
+    "publisher": "Ministry of Home Affairs",
+    "jurisdiction": "Unknown",
+    "data_owner": "Government of India"
+  },
+  "spatial_temporal": {
+    "temporal_coverage": "Unknown",
+    "spatial_coverage": "Unknown",
+    "granularity": "Unknown"
+  },
+  "usage": {
+    "license": "Open Government Data License - India",
+    "use_cases": [
+      "AI/ML training",
+      "Policy analysis",
+      "Public Health Research",
+      "Predictive Modeling"
+    ],
+    "target_audience": [
+      "Researchers",
+      "Data Scientists",
+      "Policymakers",
+      "Public Health Officials"
+    ]
+  },
+  "technical_metadata": {
+    "format": "CSV",
+    "original_filename": "NCRB_Suicide_Stats.csv",
+    "row_count": 10,
+    "column_count": 7,
+    "columns": [
+      "time_period",
+      "jurisdiction",
+      "primary_cause",
+      "female_deaths",
+      "m_count",
+      "row_id",
+      "sys_code"
+    ],
+    "data_quality": {
+      "standardized": true,
+      "ai_ready": true,
+      "completeness_score": 0.96,
+      "missing_cells": 3,
+      "total_rows": 10
+    },
+    "transformations_applied": {
+      "Time_Period": "time_period",
+      "Jurisdiction": "jurisdiction",
+      "Primary_Cause": "primary_cause",
+      "Female_Deaths": "female_deaths",
+      "M_Count": "m_count",
+      "Sys_Code": "sys_code",
+      "Row_ID": "row_id"
+    }
+  }
+}

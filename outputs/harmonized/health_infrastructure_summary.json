@@ -1,0 +1,67 @@
+{
+  "catalog_info": {
+    "title": "Health Infrastructure Summary",
+    "description": "This dataset provides a summary of health infrastructure across various districts. It includes information on bed capacity, outpatient (OPD) visits, and the number of specialists available. \n\n**Technical Summary:**\n*   **district:** Name of the district. May contain missing values.\n*   **bed_capacity:** Total bed capacity in the district.\n*   **opd_visits:** Number of outpatient visits recorded in the district.\n*   **specialists:** Number of specialist doctors available in the district.",
+    "sector": "Health",
+    "keywords": [
+      "health infrastructure",
+      "bed capacity",
+      "OPD visits",
+      "specialists",
+      "healthcare"
+    ],
+    "language": "English",
+    "update_frequency": "Unknown"
+  },
+  "provenance": {
+    "source": "Ministry of Health and Family Welfare (Inferred)",
+    "publisher": "National Health Mission (Inferred)",
+    "jurisdiction": "District",
+    "data_owner": "Government of India"
+  },
+  "spatial_temporal": {
+    "temporal_coverage": "Unknown",
+    "spatial_coverage": "Bhopal, Jaipur, Kota, Lucknow, Varanasi and other districts in India",
+    "granularity": "District"
+  },
+  "usage": {
+    "license": "Open Government Data License - India",
+    "use_cases": [
+      "AI/ML training",
+      "Policy analysis",
+      "Healthcare planning",
+      "Resource allocation"
+    ],
+    "target_audience": [
+      "Researchers",
+      "Data Scientists",
+      "Healthcare Professionals",
+      "Policy Makers"
+    ]
+  },
+  "technical_metadata": {
+    "format": "CSV",
+    "original_filename": "Health_Infra_Summary.csv",
+    "row_count": 10,
+    "column_count": 4,
+    "columns": [
+      "district",
+      "bed_capacity",
+      "opd_visits",
+      "specialists"
+    ],
+    "data_quality": {
+      "standardized": true,
+      "ai_ready": true,
+      "completeness_score": 0.88,
+      "missing_cells": 5,
+      "total_rows": 10
+    },
+    "transformations_applied": {
+      "Bed_Capacity": "bed_capacity",
+      "OPD_Visits": "opd_visits",
+      "Dist": "district",
+      "Specialists": "specialists"
+    }
+  }
+}

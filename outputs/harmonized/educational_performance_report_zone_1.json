@@ -1,0 +1,70 @@
+{
+  "catalog_info": {
+    "title": "Educational Performance Report - Zone 1",
+    "description": "This dataset provides information on educational performance within Zone 1. It includes data on the number of students, pass rates, and the number of institutions. \n\n**Technical Summary:**\n* `sys_code`: Unique system code for the administrative unit.\n* `zilla`: Name of the district.\n* `total_students`: Total number of students in the district.\n* `pass_rate`: Percentage of students who passed the examination.\n* `institutions`: Number of educational institutions in the district.",
+    "sector": "Education",
+    "keywords": [
+      "education",
+      "performance",
+      "students",
+      "pass rate",
+      "institutions",
+      "district"
+    ],
+    "language": "English",
+    "update_frequency": "Unknown"
+  },
+  "provenance": {
+    "source": "Ministry of Education",
+    "publisher": "Department of School Education and Literacy",
+    "jurisdiction": "District",
+    "data_owner": "Government of India"
+  },
+  "spatial_temporal": {
+    "temporal_coverage": "Unknown",
+    "spatial_coverage": "Zone 1 (Lucknow and Varanasi districts)",
+    "granularity": "District"
+  },
+  "usage": {
+    "license": "Open Government Data License - India",
+    "use_cases": [
+      "AI/ML training",
+      "Policy analysis",
+      "Educational planning",
+      "Performance monitoring"
+    ],
+    "target_audience": [
+      "Researchers",
+      "Data Scientists",
+      "Education policymakers",
+      "Government officials"
+    ]
+  },
+  "technical_metadata": {
+    "format": "CSV",
+    "original_filename": "Edu_Report_Zone1.csv",
+    "row_count": 10,
+    "column_count": 5,
+    "columns": [
+      "sys_code",
+      "zilla",
+      "total_students",
+      "pass_rate",
+      "institutions"
+    ],
+    "data_quality": {
+      "standardized": true,
+      "ai_ready": true,
+      "completeness_score": 1.0,
+      "missing_cells": 0,
+      "total_rows": 10
+    },
+    "transformations_applied": {
+      "Zilla": "zilla",
+      "Sys_Code": "sys_code",
+      "Institutions": "institutions",
+      "Pass_Rate": "pass_rate",
+      "Total_Students": "total_students"
+    }
+  }
+}

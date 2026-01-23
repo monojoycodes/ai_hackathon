@@ -1,0 +1,79 @@
+{
+  "catalog_info": {
+    "title": "Transportation and Parking Services Directory",
+    "description": "This dataset provides a directory of transportation and parking services across various airports in India. It includes details such as service category, airport location, service provider name, description, contact information (email, phone), website, and the date of last update. \n\n**Technical Summary:** The dataset contains the following columns: 'category' (service category in English and Hindi), 'airport' (airport name), 'title_english' (service provider name in English), 'description_english' (service description in English), 'email' (service provider email), 'phone' (service provider phone number), 'website' (service provider website), and 'last_updated' (date of last update).",
+    "sector": "Transportation",
+    "keywords": [
+      "transportation",
+      "parking",
+      "airport",
+      "services",
+      "car rental",
+      "taxi",
+      "contact information"
+    ],
+    "language": "English",
+    "update_frequency": "Unknown"
+  },
+  "provenance": {
+    "source": "Ministry of Civil Aviation (Inferred)",
+    "publisher": "IndiaAI Mission",
+    "jurisdiction": "National",
+    "data_owner": "Government of India"
+  },
+  "spatial_temporal": {
+    "temporal_coverage": "Unknown",
+    "spatial_coverage": "India (specifically airports)",
+    "granularity": "Unknown"
+  },
+  "usage": {
+    "license": "Open Government Data License - India",
+    "use_cases": [
+      "AI/ML training",
+      "Policy analysis",
+      "Geospatial analysis",
+      "Service mapping"
+    ],
+    "target_audience": [
+      "Researchers",
+      "Data Scientists",
+      "Policy Makers",
+      "Travel and Tourism Industry"
+    ]
+  },
+  "technical_metadata": {
+    "format": "CSV",
+    "original_filename": "93710e81-db2b-4f95-9223-89156dfd8bc9.csv",
+    "row_count": 260,
+    "column_count": 9,
+    "columns": [
+      "category",
+      "category",
+      "airport",
+      "title_english",
+      "description_english",
+      "email",
+      "phone",
+      "website",
+      "last_updated"
+    ],
+    "data_quality": {
+      "standardized": true,
+      "ai_ready": true,
+      "completeness_score": 0.81,
+      "missing_cells": 437,
+      "total_rows": 260
+    },
+    "transformations_applied": {
+      "airport": "airport",
+      "categoryenglish": "category",
+      "categoryHindi": "category",
+      "titleEnglish": "title_english",
+      "descriptionEnglish": "description_english",
+      "email": "email",
+      "phone": "phone",
+      "website": "website",
+      "last_updated": "last_updated"
+    }
+  }
+}

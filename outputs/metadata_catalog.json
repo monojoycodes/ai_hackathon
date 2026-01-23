@@ -1,0 +1,476 @@
+[
+  {
+    "catalog_info": {
+      "title": "Grievance Redressal System Data",
+      "description": "This dataset contains information related to grievances received and their resolution status across various categories. \n\nTechnical Summary: The dataset includes details on grievance category, subcategory, type, total grievances received, active and closed grievances (with and without escalation), successful transfers, grievance ratings (very good to very bad), counts from social media platforms (Twitter, Facebook), additional information provided, feedback received, and resolution status of feedback. Columns include: 'category', 'subcategory', 'type', 'total_received', 'active_grievances_without_escalation', 'active_grievances_with_escalation', 'closed_grievances_without_escalation', 'closed_grievances_with_escalation', 'successful_transfer_in', 'grievances_without_ratings', 'grievances_with_ratings', 'grievances_with_very_good_rating', 'grievances_with_good_rating', 'grievances_with_ok_rating', 'grievances_with_bad_rating', 'grievances_with_very_bad_rating', 'twitter_grievances', 'facebook_grievances', 'grievances_additional_info_provided', 'grievances_additional_info_not_provided', 'grievances_without_feedback', 'grievances_with_feedback', 'grievances_with_feedback_issue_not_resolved', 'grievances_with_feedback_issue_resolved'.",
+      "sector": "Government Services",
+      "keywords": [
+        "grievances",
+        "redressal",
+        "customer service",
+        "complaints",
+        "feedback",
+        "resolution",
+        "airline",
+        "ticketing"
+      ],
+      "language": "English",
+      "update_frequency": "Unknown"
+    },
+    "provenance": {
+      "source": "Unknown",
+      "publisher": "Department of Consumer Affairs (Inferred)",
+      "jurisdiction": "National",
+      "data_owner": "Government of India"
+    },
+    "spatial_temporal": {
+      "temporal_coverage": "Unknown",
+      "spatial_coverage": "Unknown",
+      "granularity": "Unknown"
+    },
+    "usage": {
+      "license": "Open Government Data License - India",
+      "use_cases": [
+        "AI/ML training",
+        "Policy analysis",
+        "Performance monitoring",
+        "Customer service improvement"
+      ],
+      "target_audience": [
+        "Researchers",
+        "Data Scientists",
+        "Government Officials",
+        "Policy Makers"
+      ]
+    },
+    "technical_metadata": {
+      "format": "CSV",
+      "original_filename": "7be93611-4e76-4077-8d00-6232d01367cf.csv",
+      "row_count": 1644,
+      "column_count": 24,
+      "columns": [
+        "category",
+        "subcategory",
+        "type",
+        "total_received",
+        "active_grievances_without_escalation",
+        "active_grievances_with_escalation",
+        "closed_grievances_without_escalation",
+        "closed_grievances_with_escalation",
+        "successful_transfer_in",
+        "grievances_without_ratings",
+        "grievances_with_ratings",
+        "grievances_with_very_good_rating",
+        "grievances_with_good_rating",
+        "grievances_with_ok_rating",
+        "grievances_with_bad_rating",
+        "grievances_with_very_bad_rating",
+        "twitter_grievances",
+        "facebook_grievances",
+        "grievances_additional_info_provided",
+        "grievances_additional_info_not_provided",
+        "grievances_without_feedback",
+        "grievances_with_feedback",
+        "grievances_with_feedback_issue_not_resolved",
+        "grievances_with_feedback_issue_resolved"
+      ],
+      "data_quality": {
+        "standardized": true,
+        "ai_ready": true,
+        "completeness_score": 1.0,
+        "missing_cells": 113,
+        "total_rows": 1644
+      },
+      "transformations_applied": {
+        "category": "category",
+        "subcategory": "subcategory",
+        "type": "type",
+        "totalReceived": "total_received",
+        "activeGrievancesWithoutEscalation": "active_grievances_without_escalation",
+        "activeGrievancesWithEscalation": "active_grievances_with_escalation",
+        "closedGrievancesWithoutEscalation": "closed_grievances_without_escalation",
+        "closedGrievancesWithEscalation": "closed_grievances_with_escalation",
+        "successfulTransferIn": "successful_transfer_in",
+        "grievancesWithoutRatings": "grievances_without_ratings",
+        "grievancesWithRatings": "grievances_with_ratings",
+        "grievancesWithVeryGoodRating": "grievances_with_very_good_rating",
+        "grievanceswithgoodrating": "grievances_with_good_rating",
+        "grievancesWithOKRating": "grievances_with_ok_rating",
+        "grievancesWithBadRating": "grievances_with_bad_rating",
+        "grievancesWithVeryBadRating": "grievances_with_very_bad_rating",
+        "twitterGrievances": "twitter_grievances",
+        "facebookGrievances": "facebook_grievances",
+        "grievancesAdditionalInfoProvided": "grievances_additional_info_provided",
+        "grievancesAdditionalInfoNotProvided": "grievances_additional_info_not_provided",
+        "grievancesWithoutFeedback": "grievances_without_feedback",
+        "grievancesWithFeedback": "grievances_with_feedback",
+        "grievancesWithFeedbackIssueNotResolved": "grievances_with_feedback_issue_not_resolved",
+        "grievancesWithFeedbackIssueResolved": "grievances_with_feedback_issue_resolved"
+      }
+    }
+  },
+  {
+    "catalog_info": {
+      "title": "Transportation and Parking Services Directory",
+      "description": "This dataset provides a directory of transportation and parking services across various airports in India. It includes details such as service category, airport location, service provider name, description, contact information (email, phone), website, and the date of last update. \n\n**Technical Summary:** The dataset contains the following columns: 'category' (service category in English and Hindi), 'airport' (airport name), 'title_english' (service provider name in English), 'description_english' (service description in English), 'email' (service provider email), 'phone' (service provider phone number), 'website' (service provider website), and 'last_updated' (date of last update).",
+      "sector": "Transportation",
+      "keywords": [
+        "transportation",
+        "parking",
+        "airport",
+        "services",
+        "car rental",
+        "taxi",
+        "contact information"
+      ],
+      "language": "English",
+      "update_frequency": "Unknown"
+    },
+    "provenance": {
+      "source": "Ministry of Civil Aviation (Inferred)",
+      "publisher": "IndiaAI Mission",
+      "jurisdiction": "National",
+      "data_owner": "Government of India"
+    },
+    "spatial_temporal": {
+      "temporal_coverage": "Unknown",
+      "spatial_coverage": "India (specifically airports)",
+      "granularity": "Unknown"
+    },
+    "usage": {
+      "license": "Open Government Data License - India",
+      "use_cases": [
+        "AI/ML training",
+        "Policy analysis",
+        "Geospatial analysis",
+        "Service mapping"
+      ],
+      "target_audience": [
+        "Researchers",
+        "Data Scientists",
+        "Policy Makers",
+        "Travel and Tourism Industry"
+      ]
+    },
+    "technical_metadata": {
+      "format": "CSV",
+      "original_filename": "93710e81-db2b-4f95-9223-89156dfd8bc9.csv",
+      "row_count": 260,
+      "column_count": 9,
+      "columns": [
+        "category",
+        "category",
+        "airport",
+        "title_english",
+        "description_english",
+        "email",
+        "phone",
+        "website",
+        "last_updated"
+      ],
+      "data_quality": {
+        "standardized": true,
+        "ai_ready": true,
+        "completeness_score": 0.81,
+        "missing_cells": 437,
+        "total_rows": 260
+      },
+      "transformations_applied": {
+        "airport": "airport",
+        "categoryenglish": "category",
+        "categoryHindi": "category",
+        "titleEnglish": "title_english",
+        "descriptionEnglish": "description_english",
+        "email": "email",
+        "phone": "phone",
+        "website": "website",
+        "last_updated": "last_updated"
+      }
+    }
+  },
+  {
+    "catalog_info": {
+      "title": "Kempegowda International Airport Bengaluru - Passenger FAQ",
+      "description": "This dataset contains frequently asked questions (FAQs) and their answers related to passenger travel at Kempegowda International Airport Bengaluru. The data is available in both English and Hindi. \n\n**Technical Summary:** The dataset consists of six columns: 'category' (indicating the FAQ category, e.g., 'Passenger'), 'last_updated' (date of last update), 'faq_question' (English version of the question), 'faq_question' (Hindi version of the question), 'faq_answer' (English version of the answer), and 'faq_answer' (Hindi version of the answer).",
+      "sector": "Transportation",
+      "keywords": [
+        "airport",
+        "FAQ",
+        "passenger",
+        "travel",
+        "Kempegowda International Airport",
+        "Bengaluru",
+        "Hindi",
+        "English"
+      ],
+      "language": "English",
+      "update_frequency": "Unknown"
+    },
+    "provenance": {
+      "source": "Ministry of Civil Aviation (Inferred)",
+      "publisher": "Bangalore International Airport Limited (Inferred)",
+      "jurisdiction": "Karnataka",
+      "data_owner": "Government of India"
+    },
+    "spatial_temporal": {
+      "temporal_coverage": "Unknown",
+      "spatial_coverage": "Kempegowda International Airport Bengaluru, Karnataka, India",
+      "granularity": "Unknown"
+    },
+    "usage": {
+      "license": "Open Government Data License - India",
+      "use_cases": [
+        "AI/ML training",
+        "Chatbot development",
+        "Policy analysis",
+        "Customer service improvement"
+      ],
+      "target_audience": [
+        "Researchers",
+        "Data Scientists",
+        "Airport Authorities",
+        "Travel Agencies"
+      ]
+    },
+    "technical_metadata": {
+      "format": "CSV",
+      "original_filename": "bc015fd1-a544-43b1-b4a2-729475c4580c.csv",
+      "row_count": 172,
+      "column_count": 6,
+      "columns": [
+        "category",
+        "last_updated",
+        "faq_question",
+        "faq_question",
+        "faq_answer",
+        "faq_answer"
+      ],
+      "data_quality": {
+        "standardized": true,
+        "ai_ready": true,
+        "completeness_score": 0.98,
+        "missing_cells": 19,
+        "total_rows": 172
+      },
+      "transformations_applied": {
+        "category": "category",
+        "faqQuestion": "faq_question",
+        "faqAnswer": "faq_answer",
+        "faqQuestionHindi": "faq_question",
+        "faqAnswerHindi": "faq_answer",
+        "lastUpdated": "last_updated"
+      }
+    }
+  },
+  {
+    "catalog_info": {
+      "title": "Educational Performance Report - Zone 1",
+      "description": "This dataset provides information on educational performance within Zone 1. It includes data on the number of students, pass rates, and the number of institutions. \n\n**Technical Summary:**\n* `sys_code`: Unique system code for the administrative unit.\n* `zilla`: Name of the district.\n* `total_students`: Total number of students in the district.\n* `pass_rate`: Percentage of students who passed the examination.\n* `institutions`: Number of educational institutions in the district.",
+      "sector": "Education",
+      "keywords": [
+        "education",
+        "performance",
+        "students",
+        "pass rate",
+        "institutions",
+        "district"
+      ],
+      "language": "English",
+      "update_frequency": "Unknown"
+    },
+    "provenance": {
+      "source": "Ministry of Education",
+      "publisher": "Department of School Education and Literacy",
+      "jurisdiction": "District",
+      "data_owner": "Government of India"
+    },
+    "spatial_temporal": {
+      "temporal_coverage": "Unknown",
+      "spatial_coverage": "Zone 1 (Lucknow and Varanasi districts)",
+      "granularity": "District"
+    },
+    "usage": {
+      "license": "Open Government Data License - India",
+      "use_cases": [
+        "AI/ML training",
+        "Policy analysis",
+        "Educational planning",
+        "Performance monitoring"
+      ],
+      "target_audience": [
+        "Researchers",
+        "Data Scientists",
+        "Education policymakers",
+        "Government officials"
+      ]
+    },
+    "technical_metadata": {
+      "format": "CSV",
+      "original_filename": "Edu_Report_Zone1.csv",
+      "row_count": 10,
+      "column_count": 5,
+      "columns": [
+        "sys_code",
+        "zilla",
+        "total_students",
+        "pass_rate",
+        "institutions"
+      ],
+      "data_quality": {
+        "standardized": true,
+        "ai_ready": true,
+        "completeness_score": 1.0,
+        "missing_cells": 0,
+        "total_rows": 10
+      },
+      "transformations_applied": {
+        "Zilla": "zilla",
+        "Sys_Code": "sys_code",
+        "Institutions": "institutions",
+        "Pass_Rate": "pass_rate",
+        "Total_Students": "total_students"
+      }
+    }
+  },
+  {
+    "catalog_info": {
+      "title": "Health Infrastructure Summary",
+      "description": "This dataset provides a summary of health infrastructure across various districts. It includes information on bed capacity, outpatient (OPD) visits, and the number of specialists available. \n\n**Technical Summary:**\n*   **district:** Name of the district. May contain missing values.\n*   **bed_capacity:** Total bed capacity in the district.\n*   **opd_visits:** Number of outpatient visits recorded in the district.\n*   **specialists:** Number of specialist doctors available in the district.",
+      "sector": "Health",
+      "keywords": [
+        "health infrastructure",
+        "bed capacity",
+        "OPD visits",
+        "specialists",
+        "healthcare"
+      ],
+      "language": "English",
+      "update_frequency": "Unknown"
+    },
+    "provenance": {
+      "source": "Ministry of Health and Family Welfare (Inferred)",
+      "publisher": "National Health Mission (Inferred)",
+      "jurisdiction": "District",
+      "data_owner": "Government of India"
+    },
+    "spatial_temporal": {
+      "temporal_coverage": "Unknown",
+      "spatial_coverage": "Bhopal, Jaipur, Kota, Lucknow, Varanasi and other districts in India",
+      "granularity": "District"
+    },
+    "usage": {
+      "license": "Open Government Data License - India",
+      "use_cases": [
+        "AI/ML training",
+        "Policy analysis",
+        "Healthcare planning",
+        "Resource allocation"
+      ],
+      "target_audience": [
+        "Researchers",
+        "Data Scientists",
+        "Healthcare Professionals",
+        "Policy Makers"
+      ]
+    },
+    "technical_metadata": {
+      "format": "CSV",
+      "original_filename": "Health_Infra_Summary.csv",
+      "row_count": 10,
+      "column_count": 4,
+      "columns": [
+        "district",
+        "bed_capacity",
+        "opd_visits",
+        "specialists"
+      ],
+      "data_quality": {
+        "standardized": true,
+        "ai_ready": true,
+        "completeness_score": 0.88,
+        "missing_cells": 5,
+        "total_rows": 10
+      },
+      "transformations_applied": {
+        "Bed_Capacity": "bed_capacity",
+        "OPD_Visits": "opd_visits",
+        "Dist": "district",
+        "Specialists": "specialists"
+      }
+    }
+  },
+  {
+    "catalog_info": {
+      "title": "National Crime Records Bureau - Suicide Statistics",
+      "description": "This dataset contains statistics related to suicides reported in India. It includes information on the time period, jurisdiction, primary cause of suicide, and the number of female and male deaths. \n\n**Technical Summary:**\n*   **time_period:** Year the suicide data pertains to.\n*   **jurisdiction:**  The city/district where the suicide occurred.\n*   **primary_cause:** The main identified reason for the suicide (may contain missing values).\n*   **female_deaths:** Number of female deaths due to suicide.\n*   **m_count:** Number of male deaths due to suicide.\n*   **row_id:** Unique identifier for each record.\n*   **sys_code:** System code for the record.",
+      "sector": "Health",
+      "keywords": [
+        "suicide",
+        "mental health",
+        "crime statistics",
+        "NCRB",
+        "India",
+        "public health"
+      ],
+      "language": "English",
+      "update_frequency": "Unknown"
+    },
+    "provenance": {
+      "source": "National Crime Records Bureau (NCRB)",
+      "publisher": "Ministry of Home Affairs",
+      "jurisdiction": "Unknown",
+      "data_owner": "Government of India"
+    },
+    "spatial_temporal": {
+      "temporal_coverage": "Unknown",
+      "spatial_coverage": "Unknown",
+      "granularity": "Unknown"
+    },
+    "usage": {
+      "license": "Open Government Data License - India",
+      "use_cases": [
+        "AI/ML training",
+        "Policy analysis",
+        "Public Health Research",
+        "Predictive Modeling"
+      ],
+      "target_audience": [
+        "Researchers",
+        "Data Scientists",
+        "Policymakers",
+        "Public Health Officials"
+      ]
+    },
+    "technical_metadata": {
+      "format": "CSV",
+      "original_filename": "NCRB_Suicide_Stats.csv",
+      "row_count": 10,
+      "column_count": 7,
+      "columns": [
+        "time_period",
+        "jurisdiction",
+        "primary_cause",
+        "female_deaths",
+        "m_count",
+        "row_id",
+        "sys_code"
+      ],
+      "data_quality": {
+        "standardized": true,
+        "ai_ready": true,
+        "completeness_score": 0.96,
+        "missing_cells": 3,
+        "total_rows": 10
+      },
+      "transformations_applied": {
+        "Time_Period": "time_period",
+        "Jurisdiction": "jurisdiction",
+        "Primary_Cause": "primary_cause",
+        "Female_Deaths": "female_deaths",
+        "M_Count": "m_count",
+        "Sys_Code": "sys_code",
+        "Row_ID": "row_id"
+      }
+    }
+  }
+]
